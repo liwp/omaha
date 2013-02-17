@@ -1,0 +1,56 @@
+#!/usr/bin/python2.4
+#
+# Copyright 2009-2011 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ========================================================================
+
+Import('env')
+
+#
+# Build show_error_action.dll
+#
+dll_env = env.Clone(
+    # Build a dll, not a lib.
+    COMPONENT_STATIC = False,
+)
+
+dll_env.Append(
+    LIBS = [
+        ('libcmt.lib', 'libcmtd.lib')[dll_env.Bit('debug')],
+        ('libcpmt.lib', 'libcpmtd.lib')[dll_env.Bit('debug')],
+        'msi.lib',
+        ],
+)
+
+signed_target_name = 'show_error_action'
+target_name = signed_target_name + '_unsigned'
+
+dll_inputs = [
+    'show_error_action.cc',
+    'show_error_action.def',
+    ]
+
+unsigned_dll = dll_env.ComponentLibrary(
+    lib_name=target_name,
+    source=dll_inputs,
+)
+
+signed_dll = dll_env.SignedBinary(
+    target=signed_target_name + '.dll',
+    source=unsigned_dll,
+)
+
+dll_env.Replicate('$STAGING_DIR', signed_dll)
+dll_env.Replicate('$STAGING_DIR',
+                  [f for f in unsigned_dll if f.suffix == '.pdb'])
