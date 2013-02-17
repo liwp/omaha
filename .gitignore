@@ -1,0 +1,5 @@
+*.pyc
+scons-out
+proxy_clsids.txt
+common/omaha_customization_proxy_clsid.h
+
