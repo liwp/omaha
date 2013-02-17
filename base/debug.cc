@@ -342,6 +342,12 @@ struct TestInitStaticVariablesDone {
 };
 static TestInitStaticVariablesDone test_var;
 
+// InterlockedDecrement() is implemented as intrinsic; if we wrap it we can
+// use it as a template parameter when the ON_SCOPE_EXIT macro is used.
+static void MyInterlockedDecrement(volatile long* n) {
+  ::InterlockedDecrement(n);
+}
+
 bool DebugReport(unsigned int id,
                  ReportType type,
                  const char *expr,
@@ -350,7 +356,7 @@ bool DebugReport(unsigned int id,
                  int linenumber,
                  DebugReportKind debug_report_kind) {
   int recursion_count = ::InterlockedIncrement(&g_debugassertrecursioncheck);
-  ON_SCOPE_EXIT(::InterlockedDecrement, &g_debugassertrecursioncheck);
+  ON_SCOPE_EXIT(MyInterlockedDecrement, &g_debugassertrecursioncheck);
   if (recursion_count > 1) {
     ::OutputDebugString(_T("recursive debugreport skipped\n"));
     return 1;

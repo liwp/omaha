@@ -687,12 +687,12 @@ TEST(UtilsTest, interlocked_exchange_pointer) {
 
   // Exchanging a pointer with self is idempotent.
   old_pi = interlocked_exchange_pointer(const_cast<int**>(&pi), pi);
-  EXPECT_EQ(pi, old_pi);
+  EXPECT_EQ(reinterpret_cast<const int*>(pi), old_pi);
   EXPECT_EQ(20, *pi);
 
   // Exchanging a pointer with NULL.
   interlocked_exchange_pointer(const_cast<int**>(&pi), static_cast<int*>(NULL));
-  EXPECT_EQ(NULL, pi);
+  EXPECT_EQ(reinterpret_cast<const int*>(NULL), reinterpret_cast<const int*>(pi));
 }
 
 TEST(UtilsTest, GetGuid)  {
