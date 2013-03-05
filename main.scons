@@ -59,7 +59,7 @@ import omaha_version_utils
 # VC2003/VC71 is 1310 but not supported by the current build.
 # VC2005/VC80 is 1400.
 # VC2008/VC90 is 1500.
-_msc_ver = 1400
+_msc_ver = 1500
 
 _sdk_path = os.environ['OMAHA_VISTASDK_DIR']
 

@@ -1,0 +1,19 @@
+OMAHA TODO
+x export Omaha SVN
+x import Omaha baseline git
+- 'push' git to Despair
+- branch VS2010
+x make build work
+  x crate batch file for setting up the environment
+  x static_assert fix
+  x apply patch
+  x upgrade gtest
+  x upgrade gmock
+  x modify main.scons
+    x add ATL Server CPPPATH
+	x Turn warnings off
+	x Disable "warnings as errors"
+  x comment out ATLSTATIC_ASSERT from atlcompli.h (http://connectbeta.microsoft.com/VisualStudio/feedback/details/535704/atlcomcli-h-cvartypeinfo-char-cannot-be-compiled-with-j-or-char-unsigned-flage-enabled)
+- create vara branch
+- customise Omaha build for Vara project
+- create a third party repo?

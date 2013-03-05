@@ -13,4 +13,4 @@ rem -- Add Visual Studio and Python to our path, and set VC env variables. --
 call "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\vcvars32.bat"
 path %OMAHA_PYTHON_DIR%;%PATH%
 rem -- Add ATLServer headers to the Visual C++ include path. --
-set INCLUDE=%INCLUDE%C:\ATL_Server\include;
+set INCLUDE=C:\ATL_Server\include;%INCLUDE%
