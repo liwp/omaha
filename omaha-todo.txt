@@ -16,4 +16,5 @@ x make build work
   x comment out ATLSTATIC_ASSERT from atlcompli.h (http://connectbeta.microsoft.com/VisualStudio/feedback/details/535704/atlcomcli-h-cvartypeinfo-char-cannot-be-compiled-with-j-or-char-unsigned-flage-enabled)
 - create vara branch
 - customise Omaha build for Vara project
+- update testing\unittest_support MSI installer with our registry paths
 - create a third party repo?

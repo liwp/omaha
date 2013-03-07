@@ -1,0 +1,41 @@
+Expected failures:
+[  FAILED  ] AppManagerReadAppPersistentDataMachineTest.ReadUninstalledAppPersistentData_UninstalledApp
+[  FAILED  ] AppManagerReadAppPersistentDataMachineTest.ClientStateExistsWithoutPvOrClientsKey
+[  FAILED  ] AppManagerReadAppPersistentDataUserTest.AppExists_NoDisplayName
+[  FAILED  ] AppManagerReadAppPersistentDataUserTest.AppExists_EmptyDisplayName
+[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersistentData_UninstalledApp
+[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersistentData_EulaNotAccepted
+[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithoutPvOrClientsKey
+[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithEmptyPvNoClientsKey
+[  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerSucceeds
+[  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
+[  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerSucceeds
+[  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
+
+Pass:
+[  FAILED  ] LocalizationTest.Localization
+[  FAILED  ] ProcessTest.ExcludeProcess
+[  FAILED  ] TimeTest.RFC822TimeParsing
+[  FAILED  ] WorkerWithTwoAppsTest.DownloadAsyncThenDownloadAndInstallAsync_Large
+[  FAILED  ] SetupUserTest.TerminateCoreProcesses_BothTypesRunningAndSimilarArgsProcess
+
+Broken:
+[  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2
+
+Ignore:
+[  FAILED  ] AtlAssertTest.AtlAssert
+
+Access denied, it seems...
+[  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning
+
+ No idea what's going wrong...
+[  FAILED  ] NetworkRequestTest.RetriesNegativeTest
+[  FAILED  ] NetworkRequestTest.RetriesNegativeTestUrlmon
+
+[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_Machine
+[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_User
+[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileCollision
+[  FAILED  ] GoogleUpdateRecoveryTest.VerifyFileSignature_SignedValid
+
+[  FAILED  ] SetupGoogleUpdateMachineTest.InstallAndUninstallMsiHelper
+[  FAILED  ] SetupGoogleUpdateMachineTest.InstallMsiHelper_OverinstallDifferentMsiBuild
