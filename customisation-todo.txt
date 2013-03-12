@@ -24,7 +24,7 @@ X omaha\base\const_addresses.h
 If necessary, modify the URLs that will be used for performing update checks and 
 returning results to match your update server's implementation. 
 
-•omaha\goopdate\omaha3_idl.idl 
+X omaha\goopdate\omaha3_idl.idl
 Generate new GUIDs for every interface and coclass. Changing the descriptive names for 
 them isn't a bad idea either. (Do not, however, change code-level names such as 
 IAppBundle or GoogleUpdate3UserClass.) 
