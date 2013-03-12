@@ -3,7 +3,7 @@ Mandatory Changes
 The following items MUST be changed before releasing a fork of Omaha. Preferably, make 
 these changes as soon as you start development: 
 
-• omaha\main.scons 
+X omaha\main.scons
 Ensure that is_google_update_build is set to False, and adjust the vendor-specific 
 constant strings. ("Google", "Update", etc.) In particular, once you have your update 
 server functional, be sure to change the domain from google.com to your company's server.
