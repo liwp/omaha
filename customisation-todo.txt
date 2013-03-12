@@ -16,14 +16,11 @@ unique.
 X omaha\base\const_object_names.h
 Modify kGlobalPrefix at the top of the file to contain your company name. 
 
-•omaha\base\const_goopdate.h 
+X omaha\common\const_goopdate.h
 Modify the names of the service names (examples: omaha_task_name_c, omaham_service_name, 
-etc.) to contain your product's name. •omaha\base\const_addresses.h 
-<NOTE>
-Comment by nick.cha...@nichesolutions.co.uk, Sep 4, 2012 
-I spotted that too. It's now at omaha\common\const_goopdate.h 
-</NOTE>
+etc.) to contain your product's name.
 
+•omaha\base\const_addresses.h
 If necessary, modify the URLs that will be used for performing update checks and 
 returning results to match your update server's implementation. 
 
