@@ -13,7 +13,7 @@ then used to create other internal strings -- for example, Registry locations, C
 ProgIDs and cross-process mutex names -- so it is crucial that you make these strings 
 unique. 
 
-•omaha\base\const_object_names.h 
+X omaha\base\const_object_names.h
 Modify kGlobalPrefix at the top of the file to contain your company name. 
 
 •omaha\base\const_goopdate.h 
