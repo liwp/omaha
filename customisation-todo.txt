@@ -40,8 +40,9 @@ Generate new GUIDs for every interface and coclass.
 Update each translation to reflect your company and product. Omaha stores all its 
 localized data in a set of resource-only DLLs, one per language. (The MetaInstaller stub, 
 on the other hand, stores a far more minimal set of translations for all languages inside 
-its EXE.) Recommended Changes¶We strongly recommend making these changes before you 
-release: 
+its EXE.) Recommended Changes
+
+We strongly recommend making these changes before you release: 
 
 •Change the names of core executables -- GoogleUpdate.exe, goopdate.dll, 
 GoogleCrashHandler.exe, and so on. (This will require changes to the SCons build scripts, 
