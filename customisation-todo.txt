@@ -29,7 +29,7 @@ Generate new GUIDs for every interface and coclass. Changing the descriptive nam
 them isn't a bad idea either. (Do not, however, change code-level names such as 
 IAppBundle or GoogleUpdate3UserClass.) 
 
-•omaha\plugins\update\activex\update_control_idl.idl 
+X omaha\plugins\update\activex\update_control_idl.idl
 Generate new GUIDs for every interface and coclass. 
 
 •omaha\goopdate\resources\goopdate_dll\*.rc 
