@@ -375,7 +375,7 @@ TEST_F(HelpUrlBuilderTest, BuildHttpGetString_MultipleApps) {
 TEST_F(HelpUrlBuilderTest, BuildGetHelpUrl_User) {
   // The URL has a begin, middle which is OS-specific and not checked, and end.
   const CString kExpetedUrlBegin =
-      _T("http://www.ninjadeploy.com/support/installer/?hl=en-GB&")
+      _T("http://www.google.com/support/installer/?hl=en-GB&")
       _T("app.0=%7Btest-user-app-id%7D&ec.0=0x80004005&ex.0=-2147418113&")
       _T("guver=5.6.7.8&m=0&os=");
   const CString kExpectedUrlAfterOs = _T("iid=&brand=&source=gethelp")
@@ -405,7 +405,7 @@ TEST_F(HelpUrlBuilderTest, BuildGetHelpUrl_User) {
 TEST_F(HelpUrlBuilderTest, BuildGetHelpUrl_Machine) {
   // The URL has a begin, middle which is OS-specific and not checked, and end.
   const CString kExpetedUrlBegin =
-      _T("http://www.ninjadeploy.com/support/installer/?hl=en-GB&")
+      _T("http://www.google.com/support/installer/?hl=en-GB&")
       _T("app.0=%7Btest-machine-app-id%7D&ec.0=0x80004004&ex.0=99&")
       _T("guver=5.6.7.8&m=1&os=");
   const CString kExpectedUrlAfterOs =

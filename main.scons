@@ -76,14 +76,17 @@ is_google_update_build = False
 # You may also wish to replace the language-neutral constants in the individual
 # *generated_resources_*.rc files with localized strings.
 _FULL_COMPANY_NAME = 'NinjaDeploy.com'
-_SHORT_COMPANY_NAME = 'NinjaDeploy.com'
-_PRODUCT_NAME = 'NinjaDeploy'
-_COMPANY_DOMAIN_BASE = 'ninjadeploy'
+_SHORT_COMPANY_NAME = 'NinjaDeploy'
+_PRODUCT_NAME = 'Update'
+# TODO: change to ninjadeploy(.com)
+_COMPANY_DOMAIN_BASE = 'google'
 _COMPANY_DOMAIN = _COMPANY_DOMAIN_BASE + '.com'
-_MAIN_EXE_BASE_NAME = 'NinjaDeploy'
+# TODO: change to NinjaDeployXXX
+_MAIN_EXE_BASE_NAME = 'GoogleUpdate'
 # TODO(omaha): Use this throughout the build files where goopdate and
 # goopdateres are referenced.
-_MAIN_DLL_BASE_NAME = 'ninjadeploy'
+# TODO: change to ndupdateXXX
+_MAIN_DLL_BASE_NAME = 'goopdate'
 # "Google Inc." must not be removed from the copyright string. This literal also
 # appears as LegalCopyright in the VERSIONINFO section of .rc files.
 # TODO(omaha): Use this variable in .wxs files, etc.
