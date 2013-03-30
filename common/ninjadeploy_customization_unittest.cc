@@ -314,7 +314,7 @@ TEST(NinjaDeployCustomizationTest, Constants_Plugins) {
   EXPECT_STREQ(_T("NinjaDeploy.OneClickCtrl.") _T(ONECLICK_PLUGIN_VERSION_ANSI),
                   kOneClickProgId);
   EXPECT_STREQ(
-      "application/x-vnd.ninjadeploy.oneclickctrl." ONECLICK_PLUGIN_VERSION_ANSI,
+      "application/x-vnd.google.oneclickctrl." ONECLICK_PLUGIN_VERSION_ANSI,
       kOneClickPluginMimeTypeAnsi);
 }
 
