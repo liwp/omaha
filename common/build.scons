@@ -56,6 +56,7 @@ customization_test_env = env.Clone()
 customization_test_env.OmahaUnittest(
     name='omaha_customization_unittest',
     source=[
+        'ninjadeploy_customization_unittest.cc',
         'omaha_customization_unittest.cc',
     ],
     LIBS=[
