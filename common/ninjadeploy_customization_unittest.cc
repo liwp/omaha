@@ -258,7 +258,7 @@ TEST(NinjaDeployCustomizationTest, Constants_Logging) {
 
 // These should not change during customization.
 TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_Prefixes) {
-  EXPECT_STREQ(_T("Global\\G"), kGlobalPrefix);
+  EXPECT_STREQ(_T("Global\\ND"), kGlobalPrefix);
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_Pipes) {
@@ -294,13 +294,13 @@ TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_SharedMemory) {
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_Services) {
-  EXPECT_STREQ(_T("gupdate_service_name"), kRegValueServiceName);
-  EXPECT_STREQ(_T("gupdatem_service_name"), kRegValueMediumServiceName);
-  EXPECT_STREQ(_T("gupdate_task_name_c"), kRegValueTaskNameC);
-  EXPECT_STREQ(_T("gupdate_task_name_ua"), kRegValueTaskNameUA);
+  EXPECT_STREQ(_T("vara_service_name"), kRegValueServiceName);
+  EXPECT_STREQ(_T("varam_service_name"), kRegValueMediumServiceName);
+  EXPECT_STREQ(_T("vara_task_name_c"), kRegValueTaskNameC);
+  EXPECT_STREQ(_T("vara_task_name_ua"), kRegValueTaskNameUA);
 
-  EXPECT_STREQ(_T("gupdate"), kServicePrefix);
-  EXPECT_STREQ(_T("gupdatem"), kMediumServicePrefix);
+  EXPECT_STREQ(_T("vara"), kServicePrefix);
+  EXPECT_STREQ(_T("varam"), kMediumServicePrefix);
 
   EXPECT_STREQ(_T("GoogleUpdate.exe"), kServiceFileName);
 }
@@ -333,37 +333,37 @@ TEST(NinjaDeployCustomizationTest, Constants_HostCheck) {
 TEST(NinjaDeployCustomizationTest, ConfigManager_RegistryKeys) {
   const ConfigManager& cm = *ConfigManager::Instance();
 
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\Update\\Clients\\"), cm.user_registry_clients());  // NOLINT
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\Update\\Clients\\"), cm.machine_registry_clients());  // NOLINT
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\Update\\Clients\\"), cm.registry_clients(false));  // NOLINT
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\Update\\Clients\\"), cm.registry_clients(true));  // NOLINT
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\Update\\Clients\\"), cm.user_registry_clients());  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\Update\\Clients\\"), cm.machine_registry_clients());  // NOLINT
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\Update\\Clients\\"), cm.registry_clients(false));  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\Update\\Clients\\"), cm.registry_clients(true));  // NOLINT
 
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\Update\\Clients\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.user_registry_clients_goopdate());  // NOLINT
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\Update\\Clients\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.machine_registry_clients_goopdate());  // NOLINT
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\Update\\Clients\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.registry_clients_goopdate(false));  // NOLINT
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\Update\\Clients\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.registry_clients_goopdate(true));  // NOLINT
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\Update\\Clients\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.user_registry_clients_goopdate());  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\Update\\Clients\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.machine_registry_clients_goopdate());  // NOLINT
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\Update\\Clients\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.registry_clients_goopdate(false));  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\Update\\Clients\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.registry_clients_goopdate(true));  // NOLINT
 
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\Update\\ClientState\\"), cm.user_registry_client_state());  // NOLINT
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\Update\\ClientState\\"), cm.machine_registry_client_state());  // NOLINT
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\Update\\ClientState\\"), cm.registry_client_state(false));  // NOLINT
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\Update\\ClientState\\"), cm.registry_client_state(true));  // NOLINT
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\Update\\ClientState\\"), cm.user_registry_client_state());  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\Update\\ClientState\\"), cm.machine_registry_client_state());  // NOLINT
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\Update\\ClientState\\"), cm.registry_client_state(false));  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\Update\\ClientState\\"), cm.registry_client_state(true));  // NOLINT
 
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\Update\\ClientState\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.user_registry_client_state_goopdate());  // NOLINT
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\Update\\ClientState\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.machine_registry_client_state_goopdate());  // NOLINT
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\Update\\ClientState\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.registry_client_state_goopdate(false));  // NOLINT
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\Update\\ClientState\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.registry_client_state_goopdate(true));  // NOLINT
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\Update\\ClientState\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.user_registry_client_state_goopdate());  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\Update\\ClientState\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.machine_registry_client_state_goopdate());  // NOLINT
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\Update\\ClientState\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.registry_client_state_goopdate(false));  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\Update\\ClientState\\{430FD4D0-B729-4F61-AA34-91526481799D}"), cm.registry_client_state_goopdate(true));  // NOLINT
 
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\Update\\ClientStateMedium\\"), cm.machine_registry_client_state_medium());  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\Update\\ClientStateMedium\\"), cm.machine_registry_client_state_medium());  // NOLINT
 
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\Update\\"), cm.user_registry_update());  // NOLINT
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\Update\\"), cm.machine_registry_update());  // NOLINT
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\Update\\"), cm.registry_update(false));  // NOLINT
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\Update\\"), cm.registry_update(true));  // NOLINT
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\Update\\"), cm.user_registry_update());  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\Update\\"), cm.machine_registry_update());  // NOLINT
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\Update\\"), cm.registry_update(false));  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\Update\\"), cm.registry_update(true));  // NOLINT
 
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\"), cm.user_registry_google());
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\"), cm.machine_registry_google());
-  EXPECT_STREQ(_T("HKCU\\Software\\Google\\"), cm.registry_google(false));
-  EXPECT_STREQ(_T("HKLM\\Software\\Google\\"), cm.registry_google(true));
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\"), cm.user_registry_google());
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\"), cm.machine_registry_google());
+  EXPECT_STREQ(_T("HKCU\\Software\\NinjaDeploy\\"), cm.registry_google(false));
+  EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\"), cm.registry_google(true));
 }
 
 TEST(NinjaDeployCustomizationTest, IsInternalUser) {
