@@ -36,7 +36,7 @@
 
 namespace omaha {
 
-TEST(OmahaCustomizationTest, Constants_BuildFiles) {
+TEST(NinjaDeployCustomizationTest, Constants_BuildFiles) {
   // Primary main.scons values.
 
   // TODO(omaha): Most of these tests are of extremely questionable
@@ -88,7 +88,7 @@ TEST(OmahaCustomizationTest, Constants_BuildFiles) {
   EXPECT_STREQ(_T("GoopdateBho.dll"), BHO_FILENAME);
 }
 
-TEST(OmahaCustomizationTest, Constants_Names) {
+TEST(NinjaDeployCustomizationTest, Constants_Names) {
   // Company and product names.
 
   // TODO(omaha): Most of these tests are of extremely questionable
@@ -120,7 +120,7 @@ TEST(OmahaCustomizationTest, Constants_Names) {
   EXPECT_STREQ(_T("goopdate"), MAIN_DLL_BASE_NAME);
 }
 
-TEST(OmahaCustomizationTest, Constants_Filenames) {
+TEST(NinjaDeployCustomizationTest, Constants_Filenames) {
   EXPECT_STREQ(_T("GoogleUpdate.exe"), kOmahaShellFileName);
   EXPECT_STREQ(_T("GoogleCrashHandler.exe"), kCrashHandlerFileName);
   EXPECT_STREQ(_T("goopdate.dll"), kOmahaDllName);
@@ -131,17 +131,17 @@ TEST(OmahaCustomizationTest, Constants_Filenames) {
   EXPECT_STREQ(_T("psuser.dll"), kPSFileNameUser);
 }
 
-TEST(OmahaCustomizationTest, Constants_Certificate) {
+TEST(NinjaDeployCustomizationTest, Constants_Certificate) {
   EXPECT_STREQ(_T("Google Inc"), kCertificateSubjectName);
 }
 
-TEST(OmahaCustomizationTest, Constants_OmahaAppId_String) {
+TEST(NinjaDeployCustomizationTest, Constants_OmahaAppId_String) {
   EXPECT_STREQ(_T("{430FD4D0-B729-4F61-AA34-91526481799D}"), GOOPDATE_APP_ID);
   EXPECT_STREQ(_T("{430FD4D0-B729-4F61-AA34-91526481799D}"),
                kGoogleUpdateAppId);
 }
 
-TEST(OmahaCustomizationTest, Constants_OmahaAppId_GUID) {
+TEST(NinjaDeployCustomizationTest, Constants_OmahaAppId_GUID) {
   const GUID kExpectedGoogleUpdateGuid =
       {0x430FD4D0, 0xB729, 0x4F61,
        {0xAA, 0x34, 0x91, 0x52, 0x64, 0x81, 0x79, 0x9D}};
@@ -150,11 +150,11 @@ TEST(OmahaCustomizationTest, Constants_OmahaAppId_GUID) {
                GuidToString(kGoopdateGuid));
 }
 
-TEST(OmahaCustomizationTest, Constants_OmahaAppId_GUIDAndStringMatch) {
+TEST(NinjaDeployCustomizationTest, Constants_OmahaAppId_GUIDAndStringMatch) {
   EXPECT_STREQ(kGoogleUpdateAppId, GuidToString(kGoopdateGuid));
 }
 
-TEST(OmahaCustomizationTest, Constants_Directories) {
+TEST(NinjaDeployCustomizationTest, Constants_Directories) {
   EXPECT_STREQ(_T("Offline"), OFFLINE_DIR_NAME);
   EXPECT_STREQ(_T("NinjaDeploy"), OMAHA_REL_COMPANY_DIR);
   EXPECT_STREQ(_T("NinjaDeploy\\CrashReports"), OMAHA_REL_CRASH_DIR);
@@ -168,7 +168,7 @@ TEST(OmahaCustomizationTest, Constants_Directories) {
                   OMAHA_REL_INSTALL_WORKING_DIR);
 }
 
-TEST(OmahaCustomizationTest, Constants_RegistryKeys_NotCustomized) {
+TEST(NinjaDeployCustomizationTest, Constants_RegistryKeys_NotCustomized) {
   EXPECT_STREQ(_T("HKLM"), MACHINE_KEY_NAME);
   EXPECT_STREQ(_T("HKLM\\"), MACHINE_KEY);
   EXPECT_STREQ(_T("HKCU"), USER_KEY_NAME);
@@ -176,7 +176,7 @@ TEST(OmahaCustomizationTest, Constants_RegistryKeys_NotCustomized) {
   EXPECT_STREQ(_T("HKU\\"), USERS_KEY);
 }
 
-TEST(OmahaCustomizationTest, Constants_RegistryKeys) {
+TEST(NinjaDeployCustomizationTest, Constants_RegistryKeys) {
   EXPECT_STREQ(_T("Software\\NinjaDeploy\\"), COMPANY_MAIN_KEY);
   EXPECT_STREQ(_T("Software\\NinjaDeploy\\Update\\"), GOOPDATE_MAIN_KEY);
   EXPECT_STREQ(_T("Software\\NinjaDeploy\\Update\\Clients\\"), GOOPDATE_REG_RELATIVE_CLIENTS);  // NOLINT
@@ -203,16 +203,16 @@ TEST(OmahaCustomizationTest, Constants_RegistryKeys) {
   EXPECT_STREQ(_T("HKLM\\Software\\NinjaDeploy\\UpdateDev\\"), MACHINE_REG_UPDATE_DEV);  // NOLINT
 }
 
-TEST(OmahaCustomizationTest, Constants_RegistryKeys_GroupPolicy) {
+TEST(NinjaDeployCustomizationTest, Constants_RegistryKeys_GroupPolicy) {
   EXPECT_GU_STREQ(_T("Software\\Policies\\Google\\Update\\"), GOOPDATE_POLICIES_RELATIVE);  // NOLINT
   EXPECT_GU_STREQ(_T("HKLM\\Software\\Policies\\Google\\Update\\"), kRegKeyGoopdateGroupPolicy);  // NOLINT
 }
 
-TEST(OmahaCustomizationTest, Constants_RegistryValues) {
+TEST(NinjaDeployCustomizationTest, Constants_RegistryValues) {
   EXPECT_GU_STREQ(_T("Google Update"), kRunValueName);
 }
 
-TEST(OmahaCustomizationTest, Constants_MsiMsp) {
+TEST(NinjaDeployCustomizationTest, Constants_MsiMsp) {
   EXPECT_STREQ(_T("GoogleUpdateHelper.msi"), kHelperInstallerName);
   EXPECT_STREQ(_T("{A92DAB39-4E2C-4304-9AB6-BC44E68B55E2}"),
                kHelperInstallerProductGuid);
@@ -220,17 +220,17 @@ TEST(OmahaCustomizationTest, Constants_MsiMsp) {
   EXPECT_STREQ(_T("{E0D0D2C9-5836-4023-AB1D-54EC3B90AD03}"), kHelperPatchGuid);
 }
 
-TEST(OmahaCustomizationTest, Constants_CompatibleShellVersions) {
+TEST(NinjaDeployCustomizationTest, Constants_CompatibleShellVersions) {
   EXPECT_EQ(2, arraysize(kCompatibleOlderShellVersions));
   EXPECT_EQ(0x0001000200830007, kCompatibleOlderShellVersions[0]);
   EXPECT_EQ(0x0001000200B70009, kCompatibleOlderShellVersions[1]);
 }
 
-TEST(OmahaCustomizationTest, Constants_BrandCode) {
+TEST(NinjaDeployCustomizationTest, Constants_BrandCode) {
   EXPECT_STREQ(_T("GGLS"), kDefaultGoogleUpdateBrandCode);
 }
 
-TEST(OmahaCustomizationTest, Constants_Addresses) {
+TEST(NinjaDeployCustomizationTest, Constants_Addresses) {
   EXPECT_STREQ(_T("www.google.com"), kGoogleHttpServer);
   EXPECT_STREQ(_T("tools.google.com"), kGoopdateServer);
   EXPECT_STREQ(_T("https://tools.google.com/service/update2"), kUrlUpdateCheck);
@@ -243,29 +243,29 @@ TEST(OmahaCustomizationTest, Constants_Addresses) {
                kUrlUsageStatsReport);
 }
 
-TEST(OmahaCustomizationTest, Constants_Config) {
+TEST(NinjaDeployCustomizationTest, Constants_Config) {
   EXPECT_GU_STREQ(_T("Software\\Google\\Update\\Shared"), kCiRegKeyShared);
 }
 
-TEST(OmahaCustomizationTest, Constants_Debug) {
+TEST(NinjaDeployCustomizationTest, Constants_Debug) {
   EXPECT_GU_STREQ(_T("GoogleUpdate-debug"), kCiDebugDirectory);
 }
 
-TEST(OmahaCustomizationTest, Constants_Logging) {
+TEST(NinjaDeployCustomizationTest, Constants_Logging) {
   EXPECT_STREQ(_T("GoogleUpdate.ini"), kLogConfigFileName);
   EXPECT_STREQ(_T("GoogleUpdate.log"), kDefaultLogFileName);
 }
 
 // These should not change during customization.
-TEST(OmahaCustomizationTest, Constants_ObjectNames_Prefixes) {
+TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_Prefixes) {
   EXPECT_GU_STREQ(_T("Global\\G"), kGlobalPrefix);
 }
 
-TEST(OmahaCustomizationTest, Constants_ObjectNames_Pipes) {
+TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_Pipes) {
   EXPECT_GU_STREQ(_T("\\\\.\\pipe\\GoogleCrashServices"), kCrashPipeNamePrefix);
 }
 
-TEST(OmahaCustomizationTest, Constants_ObjectNames_MutexesAndEvents) {
+TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_MutexesAndEvents) {
   EXPECT_STREQ(_T("{A9A86B93-B54E-4570-BE89-42418507707B}"), kSetupMutex);
   EXPECT_STREQ(_T("{A0C1F415-D2CE-4ddc-9B48-14E56FD55162}"), kShutdownEvent);
   EXPECT_STREQ(_T("{B5665124-2B19-40e2-A7BC-B44321E72C4B}"),
@@ -286,14 +286,14 @@ TEST(OmahaCustomizationTest, Constants_ObjectNames_MutexesAndEvents) {
                kRegistryAccessMutex);
 }
 
-TEST(OmahaCustomizationTest, Constants_ObjectNames_SharedMemory) {
+TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_SharedMemory) {
   EXPECT_GU_STREQ(_T("Global\\GoogleUpdate3"),
                   kGoogleUpdate3SharedMemoryName);
   EXPECT_GU_STREQ(_T("Global\\GoogleUpdateCore"),
                   kGoogleUpdateCoreSharedMemoryName);
 }
 
-TEST(OmahaCustomizationTest, Constants_Services) {
+TEST(NinjaDeployCustomizationTest, Constants_Services) {
   EXPECT_GU_STREQ(_T("gupdate_service_name"), kRegValueServiceName);
   EXPECT_GU_STREQ(_T("gupdatem_service_name"), kRegValueMediumServiceName);
   EXPECT_GU_STREQ(_T("gupdate_task_name_c"), kRegValueTaskNameC);
@@ -305,12 +305,12 @@ TEST(OmahaCustomizationTest, Constants_Services) {
   EXPECT_STREQ(_T("GoogleUpdate.exe"), kServiceFileName);
 }
 
-TEST(OmahaCustomizationTest, Constants_ScheduledTasks) {
+TEST(NinjaDeployCustomizationTest, Constants_ScheduledTasks) {
   EXPECT_GU_STREQ(_T("GoogleUpdateTaskUser"), kScheduledTaskNameUserPrefix);
   EXPECT_GU_STREQ(_T("GoogleUpdateTaskMachine"), kScheduledTaskNameMachinePrefix);
 }
 
-TEST(OmahaCustomizationTest, Constants_Plugins) {
+TEST(NinjaDeployCustomizationTest, Constants_Plugins) {
   EXPECT_GU_STREQ(_T("Google.OneClickCtrl.") _T(ONECLICK_PLUGIN_VERSION_ANSI),
                   kOneClickProgId);
   EXPECT_STREQ(
@@ -318,7 +318,7 @@ TEST(OmahaCustomizationTest, Constants_Plugins) {
       kOneClickPluginMimeTypeAnsi);
 }
 
-TEST(OmahaCustomizationTest, Constants_HostCheck) {
+TEST(NinjaDeployCustomizationTest, Constants_HostCheck) {
   EXPECT_EQ(4, arraysize(kSiteLockPatternStrings));
   EXPECT_STREQ(_T("^(gears)|(mail)|(tools)|(www)|(desktop)|(pack)\\.google\\.com$"), kSiteLockPatternStrings[0]);  // NOLINT
   EXPECT_STREQ(_T("^www\\.google\\.(ad)|(bg)|(ca)|(cn)|(cz)|(de)|(es)|(fi)|(fr)|(gr)|(hr)|(hu)|(it)|(ki)|(kr)|(lt)|(lv)|(nl)|(no)|(pl)|(pt)|(ro)|(ru)|(sk)|(sg)|(sl)|(sr)|(vn)$"), kSiteLockPatternStrings[1]);  // NOLINT
@@ -330,7 +330,7 @@ TEST(OmahaCustomizationTest, Constants_HostCheck) {
 // ConfigManager keys.
 //
 
-TEST(OmahaCustomizationTest, ConfigManager_RegistryKeys) {
+TEST(NinjaDeployCustomizationTest, ConfigManager_RegistryKeys) {
   const ConfigManager& cm = *ConfigManager::Instance();
 
   EXPECT_GU_STREQ(_T("HKCU\\Software\\Google\\Update\\Clients\\"), cm.user_registry_clients());  // NOLINT
@@ -366,7 +366,7 @@ TEST(OmahaCustomizationTest, ConfigManager_RegistryKeys) {
   EXPECT_GU_STREQ(_T("HKLM\\Software\\Google\\"), cm.registry_google(true));
 }
 
-TEST(OmahaCustomizationTest, IsInternalUser) {
+TEST(NinjaDeployCustomizationTest, IsInternalUser) {
   if (IsBuildSystem()) {
   // The build system is not configured the same.
   // This may or may not be true in non-Google Update builds.
@@ -384,19 +384,19 @@ TEST(OmahaCustomizationTest, IsInternalUser) {
 // Test helpers.
 //
 
-TEST(OmahaCustomizationTest, GetGoogleUserPath) {
+TEST(NinjaDeployCustomizationTest, GetGoogleUserPath) {
   EXPECT_STREQ(GetLocalAppDataPath() + SHORT_COMPANY_NAME + _T("\\"),
                GetGoogleUserPath());
 }
 
-TEST(OmahaCustomizationTest, GetGoogleUpdateUserPath) {
+TEST(NinjaDeployCustomizationTest, GetGoogleUpdateUserPath) {
   EXPECT_STREQ(GetLocalAppDataPath() + SHORT_COMPANY_NAME + _T("\\")
                                      + PRODUCT_NAME + _T("\\"),
                GetGoogleUpdateUserPath());
 }
 
 // Assumes Program Files is in the normal location.
-TEST(OmahaCustomizationTest, GetGoogleUpdateMachinePath) {
+TEST(NinjaDeployCustomizationTest, GetGoogleUpdateMachinePath) {
   CString expected_machine_path;
   EXPECT_SUCCEEDED(GetFolderPath(CSIDL_PROGRAM_FILES | CSIDL_FLAG_DONT_VERIFY,
                                  &expected_machine_path));
