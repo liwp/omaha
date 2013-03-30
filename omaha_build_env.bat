@@ -14,3 +14,5 @@ call "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\vcvars32.bat"
 path %OMAHA_PYTHON_DIR%;%PATH%
 rem -- Add ATLServer headers to the Visual C++ include path. --
 set INCLUDE=C:\ATL_Server\include;%INCLUDE%
+rem -- Disable the hostname / AD name test
+set OMAHA_TEST_BUILD_SYSTEM=1
