@@ -204,12 +204,12 @@ TEST(NinjaDeployCustomizationTest, Constants_RegistryKeys) {
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_RegistryKeys_GroupPolicy) {
-  EXPECT_STREQ(_T("Software\\Policies\\Google\\Update\\"), GOOPDATE_POLICIES_RELATIVE);  // NOLINT
-  EXPECT_STREQ(_T("HKLM\\Software\\Policies\\Google\\Update\\"), kRegKeyGoopdateGroupPolicy);  // NOLINT
+  EXPECT_STREQ(_T("Software\\Policies\\NinjaDeploy\\Update\\"), GOOPDATE_POLICIES_RELATIVE);  // NOLINT
+  EXPECT_STREQ(_T("HKLM\\Software\\Policies\\NinjaDeploy\\Update\\"), kRegKeyGoopdateGroupPolicy);  // NOLINT
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_RegistryValues) {
-  EXPECT_STREQ(_T("Google Update"), kRunValueName);
+  EXPECT_STREQ(_T("NinjaDeploy Update"), kRunValueName);
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_MsiMsp) {
@@ -244,11 +244,11 @@ TEST(NinjaDeployCustomizationTest, Constants_Addresses) {
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_Config) {
-  EXPECT_STREQ(_T("Software\\Google\\Update\\Shared"), kCiRegKeyShared);
+  EXPECT_STREQ(_T("Software\\NinjaDeploy\\Update\\Shared"), kCiRegKeyShared);
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_Debug) {
-  EXPECT_STREQ(_T("GoogleUpdate-debug"), kCiDebugDirectory);
+  EXPECT_STREQ(_T("NinjaDeployUpdate-debug"), kCiDebugDirectory);
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_Logging) {
@@ -262,7 +262,7 @@ TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_Prefixes) {
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_Pipes) {
-  EXPECT_STREQ(_T("\\\\.\\pipe\\GoogleCrashServices"), kCrashPipeNamePrefix);
+  EXPECT_STREQ(_T("\\\\.\\pipe\\NinjaDeployCrashServices"), kCrashPipeNamePrefix);
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_MutexesAndEvents) {
@@ -287,9 +287,9 @@ TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_MutexesAndEvents) {
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_ObjectNames_SharedMemory) {
-  EXPECT_STREQ(_T("Global\\GoogleUpdate3"),
+  EXPECT_STREQ(_T("Global\\NinjaDeployUpdate3"),
                   kGoogleUpdate3SharedMemoryName);
-  EXPECT_STREQ(_T("Global\\GoogleUpdateCore"),
+  EXPECT_STREQ(_T("Global\\NinjaDeployUpdateCore"),
                   kGoogleUpdateCoreSharedMemoryName);
 }
 
@@ -306,15 +306,15 @@ TEST(NinjaDeployCustomizationTest, Constants_Services) {
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_ScheduledTasks) {
-  EXPECT_STREQ(_T("GoogleUpdateTaskUser"), kScheduledTaskNameUserPrefix);
-  EXPECT_STREQ(_T("GoogleUpdateTaskMachine"), kScheduledTaskNameMachinePrefix);
+  EXPECT_STREQ(_T("NinjaDeployUpdateTaskUser"), kScheduledTaskNameUserPrefix);
+  EXPECT_STREQ(_T("NinjaDeployUpdateTaskMachine"), kScheduledTaskNameMachinePrefix);
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_Plugins) {
-  EXPECT_STREQ(_T("Google.OneClickCtrl.") _T(ONECLICK_PLUGIN_VERSION_ANSI),
+  EXPECT_STREQ(_T("NinjaDeploy.OneClickCtrl.") _T(ONECLICK_PLUGIN_VERSION_ANSI),
                   kOneClickProgId);
   EXPECT_STREQ(
-      "application/x-vnd.google.oneclickctrl." ONECLICK_PLUGIN_VERSION_ANSI,
+      "application/x-vnd.ninjadeploy.oneclickctrl." ONECLICK_PLUGIN_VERSION_ANSI,
       kOneClickPluginMimeTypeAnsi);
 }
 
