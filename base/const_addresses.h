@@ -33,7 +33,7 @@ namespace omaha {
 
 // Static string used as an identity for the "Omaha" Google domain.
 // TODO(omaha): Rename this as a plug-in domain.
-const TCHAR* const kGoopdateServer = _T("updates.") COMPANY_DOMAIN;
+const TCHAR* const kGoopdateServer = _T("www.") COMPANY_DOMAIN;
 
 // HTTP protocol prefix
 #define kProtoSuffix              _T("://")
@@ -50,15 +50,15 @@ const TCHAR* const kGoopdateServer = _T("updates.") COMPANY_DOMAIN;
 
 // Update checks and manifest requests.
 const TCHAR* const kUrlUpdateCheck =
-    kHttpsProto _T("updates.") COMPANY_DOMAIN _T("/update2");
+    kHttpsProto _T("www.") COMPANY_DOMAIN _T("/update2");
 
 // Pings.
 const TCHAR* const kUrlPing =
-    _T("http://updates.") COMPANY_DOMAIN _T("/update2");
+    _T("http://www.") COMPANY_DOMAIN _T("/update2");
 
 // Crash reports.
 const TCHAR* const kUrlCrashReport =
-    _T("http://crashes.") COMPANY_DOMAIN _T("/report");
+    _T("http://www.") COMPANY_DOMAIN _T("/report");
 
 // More information url.
 // Must allow query parameters to be appended to it.
@@ -67,11 +67,11 @@ const TCHAR* const kUrlMoreInfo =
 
 // Code Red check url.
 const TCHAR* const kUrlCodeRedCheck =
-    _T("http://codered.updates.") COMPANY_DOMAIN _T("/check2");
+    _T("http://www.") COMPANY_DOMAIN _T("/check2");
 
 // Usage stats url.
 const TCHAR* const kUrlUsageStatsReport =
-    _T("http://stats.") COMPANY_DOMAIN _T("/usagestats");
+    _T("http://www.") COMPANY_DOMAIN _T("/usagestats");
 
 }  // namespace omaha
 
