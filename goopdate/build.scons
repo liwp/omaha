@@ -438,6 +438,7 @@ customization_test_env['CPPPATH'] += [
 customization_test = customization_test_env.OmahaUnittest(
     name='omaha_customization_goopdate_apis_unittest',
     source=[
+        'ninjadeploy_customization_goopdate_apis_unittest.cc',
         'omaha_customization_goopdate_apis_unittest.cc',
         'omaha3_idl_i.obj',  # Needed for LIBID_*.
     ],
