@@ -143,9 +143,9 @@ TEST(NinjaDeployCustomizationTest, Constants_OmahaAppId_String) {
 
 TEST(NinjaDeployCustomizationTest, Constants_OmahaAppId_GUID) {
   const GUID kExpectedGoogleUpdateGuid =
-      {0x430FD4D0, 0xB729, 0x4F61,
-       {0xAA, 0x34, 0x91, 0x52, 0x64, 0x81, 0x79, 0x9D}};
-  EXPECT_TRUE(::IsEqualGUID(kExpectedGoogleUpdateGuid, kGoopdateGuid));
+      {0x5CB309C8, 0x48AD, 0x4C7A,
+       {0x83, 0x79, 0x15, 0x69, 0x6D, 0xF9, 0xD3, 0x1D}};
+ EXPECT_TRUE(::IsEqualGUID(kExpectedGoogleUpdateGuid, kGoopdateGuid));
   EXPECT_STREQ(_T("{5CB309C8-48AD-4C7A-8379-15696DF9D31D}"),
                GuidToString(kGoopdateGuid));
 }
@@ -232,14 +232,14 @@ TEST(NinjaDeployCustomizationTest, Constants_BrandCode) {
 
 TEST(NinjaDeployCustomizationTest, Constants_Addresses) {
   EXPECT_STREQ(_T("www.google.com"), kGoogleHttpServer);
-  EXPECT_STREQ(_T("tools.google.com"), kGoopdateServer);
-  EXPECT_STREQ(_T("https://tools.google.com/service/update2"), kUrlUpdateCheck);
-  EXPECT_STREQ(_T("http://tools.google.com/service/update2"), kUrlPing);
-  EXPECT_STREQ(_T("http://clients2.google.com/cr/report"), kUrlCrashReport);
+  EXPECT_STREQ(_T("www.google.com"), kGoopdateServer);
+  EXPECT_STREQ(_T("https://www.google.com/update2"), kUrlUpdateCheck);
+  EXPECT_STREQ(_T("http://www.google.com/update2"), kUrlPing);
+  EXPECT_STREQ(_T("http://www.google.com/report"), kUrlCrashReport);
   EXPECT_STREQ(_T("http://www.google.com/support/installer/?"), kUrlMoreInfo);
-  EXPECT_STREQ(_T("http://cr-tools.clients.google.com/service/check2"),
+  EXPECT_STREQ(_T("http://www.google.com/check2"),
                kUrlCodeRedCheck);
-  EXPECT_STREQ(_T("http://clients5.google.com/tbproxy/usagestats"),
+  EXPECT_STREQ(_T("http://www.google.com/usagestats"),
                kUrlUsageStatsReport);
 }
 
