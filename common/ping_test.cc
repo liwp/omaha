@@ -56,7 +56,7 @@ TEST_F(PingTest, BuildOmahaPing) {
                               ping_event2);
 
   CString expected_ping_request_substring;
-  expected_ping_request_substring.Format(_T("<app appid=\"{430FD4D0-B729-4F61-AA34-91526481799D}\" version=\"1.0.0.0\" nextversion=\"2.0.0.0\" lang=\"en\" brand=\"GGLS\" client=\"a client id\" iid=\"{DE06587E-E5AB-4364-A46B-F3AC733007B3}\"><event eventtype=\"2\" eventresult=\"1\" errorcode=\"10\" extracode1=\"20\"/><event eventtype=\"2\" eventresult=\"1\" errorcode=\"30\" extracode1=\"40\"/></app>"));  // NOLINT
+  expected_ping_request_substring.Format(_T("<app appid=\"{5CB309C8-48AD-4C7A-8379-15696DF9D31D}\" version=\"1.0.0.0\" nextversion=\"2.0.0.0\" lang=\"en\" brand=\"GGLS\" client=\"a client id\" iid=\"{DE06587E-E5AB-4364-A46B-F3AC733007B3}\"><event eventtype=\"2\" eventresult=\"1\" errorcode=\"10\" extracode1=\"20\"/><event eventtype=\"2\" eventresult=\"1\" errorcode=\"30\" extracode1=\"40\"/></app>"));  // NOLINT
 
   CString actual_ping_request;
   install_ping.BuildRequestString(&actual_ping_request);
@@ -113,7 +113,7 @@ TEST_F(PingTest, BuildAppsPing) {
   apps_ping.BuildAppsPing(ping_event);
 
   CString expected_ping_request_substring;
-  expected_ping_request_substring.Format(_T("<app appid=\"{430FD4D0-B729-4F61-AA34-91526481799D}\" version=\"1.3.23.0\" nextversion=\"\" lang=\"en\" brand=\"GGLS\" client=\"someclientid\" experiments=\"some_experiment=a|Fri, 14 Aug 2015 16:13:03 GMT\" iid=\"{7C0B6E56-B24B-436b-A960-A6EA201E886F}\"><event eventtype=\"2\" eventresult=\"1\" errorcode=\"34\" extracode1=\"6\"/></app>"));  // NOLINT
+  expected_ping_request_substring.Format(_T("<app appid=\"{5CB309C8-48AD-4C7A-8379-15696DF9D31D}\" version=\"1.3.23.0\" nextversion=\"\" lang=\"en\" brand=\"GGLS\" client=\"someclientid\" experiments=\"some_experiment=a|Fri, 14 Aug 2015 16:13:03 GMT\" iid=\"{7C0B6E56-B24B-436b-A960-A6EA201E886F}\"><event eventtype=\"2\" eventresult=\"1\" errorcode=\"34\" extracode1=\"6\"/></app>"));  // NOLINT
 
   CString actual_ping_request;
   apps_ping.BuildRequestString(&actual_ping_request);
@@ -122,7 +122,7 @@ TEST_F(PingTest, BuildAppsPing) {
 }
 
 TEST_F(PingTest, SendString) {
-  CString request_string = _T("<?xml version=\"1.0\" encoding=\"UTF-8\"?><request protocol=\"3.0\" version=\"1.3.23.0\" ismachine=\"1\" sessionid=\"unittest\" installsource=\"oneclick\" testsource=\"dev\" requestid=\"{EC821C33-E4EE-4E75-BC85-7E9DFC3652F5}\" periodoverridesec=\"7407360\"><os platform=\"win\" version=\"6.0\" sp=\"Service Pack 1\"/><app appid=\"{430FD4D0-B729-4F61-AA34-91526481799D}\" version=\"1.0.0.0\" nextversion=\"2.0.0.0\" lang=\"en\" brand=\"GGLS\" client=\"a client id\" iid=\"{DE06587E-E5AB-4364-A46B-F3AC733007B3}\"><event eventtype=\"10\" eventresult=\"1\" errorcode=\"0\" extracode1=\"0\"/></app></request>");   // NOLINT
+  CString request_string = _T("<?xml version=\"1.0\" encoding=\"UTF-8\"?><request protocol=\"3.0\" version=\"1.3.23.0\" ismachine=\"1\" sessionid=\"unittest\" installsource=\"oneclick\" testsource=\"dev\" requestid=\"{EC821C33-E4EE-4E75-BC85-7E9DFC3652F5}\" periodoverridesec=\"7407360\"><os platform=\"win\" version=\"6.0\" sp=\"Service Pack 1\"/><app appid=\"{5CB309C8-48AD-4C7A-8379-15696DF9D31D}\" version=\"1.0.0.0\" nextversion=\"2.0.0.0\" lang=\"en\" brand=\"GGLS\" client=\"a client id\" iid=\"{DE06587E-E5AB-4364-A46B-F3AC733007B3}\"><event eventtype=\"10\" eventresult=\"1\" errorcode=\"0\" extracode1=\"0\"/></app></request>");   // NOLINT
   EXPECT_HRESULT_SUCCEEDED(Ping::SendString(false,
                                             HeadersVector(),
                                             request_string));
@@ -132,7 +132,7 @@ TEST_F(PingTest, SendString) {
 }
 
 TEST_F(PingTest, HandlePing) {
-  CString request_string = _T("<?xml version=\"1.0\" encoding=\"UTF-8\"?><request protocol=\"3.0\" version=\"1.3.23.0\" ismachine=\"1\" sessionid=\"unittest\" installsource=\"oneclick\" testsource=\"dev\" requestid=\"{EC821C33-E4EE-4E75-BC85-7E9DFC3652F5}\" periodoverridesec=\"7407360\"><os platform=\"win\" version=\"6.0\" sp=\"Service Pack 1\"/><app appid=\"{430FD4D0-B729-4F61-AA34-91526481799D}\" version=\"1.0.0.0\" nextversion=\"2.0.0.0\" lang=\"en\" brand=\"GGLS\" client=\"a client id\" iid=\"{DE06587E-E5AB-4364-A46B-F3AC733007B3}\"><event eventtype=\"10\" eventresult=\"1\" errorcode=\"0\" extracode1=\"0\"/></app></request>");   // NOLINT
+  CString request_string = _T("<?xml version=\"1.0\" encoding=\"UTF-8\"?><request protocol=\"3.0\" version=\"1.3.23.0\" ismachine=\"1\" sessionid=\"unittest\" installsource=\"oneclick\" testsource=\"dev\" requestid=\"{EC821C33-E4EE-4E75-BC85-7E9DFC3652F5}\" periodoverridesec=\"7407360\"><os platform=\"win\" version=\"6.0\" sp=\"Service Pack 1\"/><app appid=\"{5CB309C8-48AD-4C7A-8379-15696DF9D31D}\" version=\"1.0.0.0\" nextversion=\"2.0.0.0\" lang=\"en\" brand=\"GGLS\" client=\"a client id\" iid=\"{DE06587E-E5AB-4364-A46B-F3AC733007B3}\"><event eventtype=\"10\" eventresult=\"1\" errorcode=\"0\" extracode1=\"0\"/></app></request>");   // NOLINT
 
   CStringA request_string_utf8(WideToUtf8(request_string));
   CStringA ping_string_utf8;
