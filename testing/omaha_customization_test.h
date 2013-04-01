@@ -20,6 +20,10 @@
 
 #include "omaha/testing/unit_test.h"
 
+#define EXPECT_ID_EQ(uuid, interface_id) \
+    EXPECT_STREQ(CString(uuid).MakeUpper(), \
+                 omaha::GuidToString(interface_id));
+
 #ifdef GOOGLE_UPDATE_BUILD
 // For Google Update builds, expect the values to be equal and for the
 // interface names to exist.
