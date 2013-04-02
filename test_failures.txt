@@ -1,21 +1,3 @@
-X bcj2_encoder_unittest
-X client_utils_unittest
-X help_url_builder_unittest
-X install_self_no_xml_parser_unittest
-O omaha_customization_goopdate_apis_unittest
-X omaha_customization_unittest
-O omaha_customization_update_apis_unittest
-X omaha_ui_unittest
-X update_plugin_unittest
-X omaha_unittest
-
-The following 4 tests failed:
-
-scons-out\dbg-win\staging\omaha_unittest.exe
-scons-out\dbg-win\tests\omaha_customization_goopdate_apis_unittest.exe
-scons-out\dbg-win\tests\omaha_customization_unittest.exe
-scons-out\dbg-win\tests\omaha_customization_update_apis_unittest.exe
-
 [ RUN      ] AtlAssertTest.AtlAssert
 unknown file: error: SEH exception with code 0xc0000005 thrown in the test body.
 
@@ -60,10 +42,6 @@ Expected: true
 [  FAILED  ] CrashTest.Report_OmahaCrash
 [  FAILED  ] CrashTest.Report_ProductCrash
 [  FAILED  ] CrashTest.WriteMinidump
-[  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerSucceeds
-[  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
-[  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerSucceeds
-[  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
 [  FAILED  ] WorkerWithTwoAppsTest.CheckForUpdateAsync_Large
 [  FAILED  ] WorkerWithTwoAppsTest.DownloadAsyncThenDownloadAndInstallAsync_Large
 [  FAILED  ] WorkerWithTwoAppsTest.DownloadAndInstallAsyncWithoutDownload_Large
@@ -76,3 +54,13 @@ Expected: true
 [  FAILED  ] GoogleUpdateRecoveryTest.ProductionServerResponseTest
 [  FAILED  ] SetupGoogleUpdateMachineTest.InstallAndUninstallMsiHelper
 [  FAILED  ] SetupGoogleUpdateMachineTest.InstallMsiHelper_OverinstallDifferentMsiBuild
+
+InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerSucceeds
+InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
+InstallerWrapperMachineTest.InstallApp_MsiInstallerSucceeds
+InstallerWrapperMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
+
+These tests use a small MSI installer in testing\unittest_support that is hardwired
+to write some data to the the Google Update registry paths. The WiX sources for
+this MSI are in test\test_foo.wxs.xml -- update this to contain your company and
+product name, build the new MSI, and drop it into unittest_support.
