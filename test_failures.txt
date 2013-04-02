@@ -40,64 +40,6 @@ core\google_update_core_unittest.cc(92): error: Value of: google_update_core != 
 Expected: true
 [  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning (31735 ms)
 
-[ RUN      ] AppManagerReadAppPersistentDataMachineTest.ReadUninstalledAppPersistentData_UninstalledApp
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataMachineTest.ReadUninstalledAppPersistentData_UninstalledApp (47 ms)
-[ RUN      ] AppManagerReadAppPersistentDataMachineTest.ClientStateExistsWithoutPvOrClientsKey
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataMachineTest.ClientStateExistsWithoutPvOrClientsKey (15 ms)
-
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.AppExists_NoDisplayName
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.AppExists_NoDisplayName (31 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.AppExists_EmptyDisplayName
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.AppExists_EmptyDisplayName(31 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersistentData_UninstalledApp
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersistentData_UninstalledApp (31 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersistentData_EulaNotAccepted
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersistentData_EulaNotAccepted (78 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithoutPvOrClientsKey
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithoutPvOrClientsKey (31 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithEmptyPvNoClientsKey
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithEmptyPvNoClientsKey (31 ms)
-
 ### RUN ALL TESTS ###
 [  FAILED  ] AtlAssertTest.AtlAssert
 [  FAILED  ] BrowserUtilsDefaultBrowserSavedTest.GetDefaultBrowserType_IE
@@ -115,14 +57,6 @@ Which is: L"NinjaDeploy Application"
 [  FAILED  ] WebServicesClientTest.SendString
 [  FAILED  ] WebServicesClientTest.SendStringWithCustomHeader
 [  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning
-[  FAILED  ] AppManagerReadAppPersistentDataMachineTest.ReadUninstalledAppPersistentData_UninstalledApp
-[  FAILED  ] AppManagerReadAppPersistentDataMachineTest.ClientStateExistsWithoutPvOrClientsKey
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.AppExists_NoDisplayName
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.AppExists_EmptyDisplayName
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersistentData_UninstalledApp
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersistentData_EulaNotAccepted
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithoutPvOrClientsKey
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithEmptyPvNoClientsKey
 [  FAILED  ] CrashTest.Report_OmahaCrash
 [  FAILED  ] CrashTest.Report_ProductCrash
 [  FAILED  ] CrashTest.WriteMinidump
