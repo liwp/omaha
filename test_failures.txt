@@ -40,29 +40,6 @@ core\google_update_core_unittest.cc(92): error: Value of: google_update_core != 
 Expected: true
 [  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning (31735 ms)
 
-[ RUN      ] AppBundlePopulatedRegistryUserTest.createInstalledApp_Present_TwoApps
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"Google Application"
-[  FAILED  ] AppBundlePopulatedRegistryUserTest.createInstalledApp_Present_TwoApps (281 ms)
-[ RUN      ] AppBundlePopulatedRegistryUserTest.createAllInstalledApps
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"Google Application"
-[  FAILED  ] AppBundlePopulatedRegistryUserTest.createAllInstalledApps (46 ms)
-[ RUN      ] AppBundlePopulatedRegistryUserTest.createAllInstalledApps_InvalidPvValueType
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"Google Application"
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"Google Application"
-[  FAILED  ] AppBundlePopulatedRegistryUserTest.createAllInstalledApps_InvalidPvValueType (63 ms)
-
 [ RUN      ] AppManagerReadAppPersistentDataMachineTest.ReadUninstalledAppPersistentData_UninstalledApp
 goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
   Actual: L"Ninja Deploy Application"
@@ -138,10 +115,6 @@ Which is: L"NinjaDeploy Application"
 [  FAILED  ] WebServicesClientTest.SendString
 [  FAILED  ] WebServicesClientTest.SendStringWithCustomHeader
 [  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning
-[  FAILED  ] AppBundlePopulatedRegistryUserTest.createInstalledApp_Present_TwoApps
-[  FAILED  ] AppBundlePopulatedRegistryUserTest.createAllInstalledApps
-[  FAILED  ] AppBundlePopulatedRegistryUserTest.createAllInstalledApps_InvalidPvValueType
-[  FAILED  ] AppBundlePopulatedRegistryMachineTest.createAllInstalledApps
 [  FAILED  ] AppManagerReadAppPersistentDataMachineTest.ReadUninstalledAppPersistentData_UninstalledApp
 [  FAILED  ] AppManagerReadAppPersistentDataMachineTest.ClientStateExistsWithoutPvOrClientsKey
 [  FAILED  ] AppManagerReadAppPersistentDataUserTest.AppExists_NoDisplayName
