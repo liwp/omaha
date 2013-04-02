@@ -167,16 +167,5 @@ Which is: L"NinjaDeploy Application"
 [  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileCollision
 [  FAILED  ] GoogleUpdateRecoveryTest.VerifyFileSignature_SignedValid
 [  FAILED  ] GoogleUpdateRecoveryTest.ProductionServerResponseTest
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_MachineApp
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_UserApp
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_NoOmahaRegKeys
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_EmptyAppInfo
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsZeroDwordInHkcu
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsNonZeroDword
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsZeroDword64
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsNonZeroDword64
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsZeroAsString
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsZeroAsBinary
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_GroupPolicyKeyExistsButNoAutoUpdateCheckPeriodMinutes
 [  FAILED  ] SetupGoogleUpdateMachineTest.InstallAndUninstallMsiHelper
 [  FAILED  ] SetupGoogleUpdateMachineTest.InstallMsiHelper_OverinstallDifferentMsiBuild
