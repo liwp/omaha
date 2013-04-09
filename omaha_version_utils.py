@@ -17,10 +17,10 @@
 
 """Constants and utilities related to Omaha versions."""
 
-_ONECLICK_PLUGIN_NAME = 'npGoogleOneClick'
-_UPDATE_PLUGIN_NAME = 'npGoogleUpdate'
+_ONECLICK_PLUGIN_NAME = 'npNinjaDeployOneClick'
+_UPDATE_PLUGIN_NAME = 'npNinjaDeployUpdate'
 _BHO_NAME = 'GoopdateBho'
-_CRASH_HANDLER_NAME = 'GoogleCrashHandler'
+_CRASH_HANDLER_NAME = 'NinjaDeployCrashHandler'
 
 # List of languages that are fully supported in the current build.
 _OMAHA_LANGUAGES = [
@@ -117,14 +117,14 @@ def _GetMetainstallerPayloadFilenames(prefix,
   # files (googleupdate.exe, goopdateres_*.dll, etc.) are hardcoded all over
   # the place, and require a ton of point fixes to customize.
   payload_files = [
-      'GoogleUpdate.exe',
+      'NinjaDeployUpdate.exe',
       '%s.exe' % _CRASH_HANDLER_NAME,
       '%sgoopdate.dll' % (prefix),
       plugin_dll_name,
       bho_dll_name,
-      'GoogleUpdateHelper.msi',
-      'GoogleUpdateBroker.exe',
-      'GoogleUpdateOnDemand.exe',
+      'NinjaDeployUpdateHelper.msi',
+      'NinjaDeployUpdateBroker.exe',
+      'NinjaDeployUpdateOnDemand.exe',
       '%spsmachine.dll' % (prefix),
       '%spsuser.dll' % (prefix),
       ]
@@ -136,8 +136,8 @@ def _GetMetainstallerPayloadFilenames(prefix,
     payload_files.remove(bho_dll_name)
   elif _IsSupportedOmaha2Version(omaha_version):
     payload_files.remove(plugin_dll_name)
-    payload_files.remove('GoogleUpdateBroker.exe')
-    payload_files.remove('GoogleUpdateOnDemand.exe')
+    payload_files.remove('NinjaDeployUpdateBroker.exe')
+    payload_files.remove('NinjaDeployUpdateOnDemand.exe')
     payload_files.remove('psmachine.dll')
     payload_files.remove('psuser.dll')
   else:

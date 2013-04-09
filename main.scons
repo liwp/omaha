@@ -82,7 +82,7 @@ _PRODUCT_NAME = 'Update'
 _COMPANY_DOMAIN_BASE = 'google'
 _COMPANY_DOMAIN = _COMPANY_DOMAIN_BASE + '.com'
 # TODO: change to NinjaDeployXXX
-_MAIN_EXE_BASE_NAME = 'GoogleUpdate'
+_MAIN_EXE_BASE_NAME = 'NinjaDeployUpdate'
 # TODO(omaha): Use this throughout the build files where goopdate and
 # goopdateres are referenced.
 # TODO: change to ndupdateXXX, NOTE: this variable is not used - we have to search for goopdate in the source code
