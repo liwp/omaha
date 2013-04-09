@@ -85,7 +85,7 @@ _COMPANY_DOMAIN = _COMPANY_DOMAIN_BASE + '.com'
 _MAIN_EXE_BASE_NAME = 'GoogleUpdate'
 # TODO(omaha): Use this throughout the build files where goopdate and
 # goopdateres are referenced.
-# TODO: change to ndupdateXXX
+# TODO: change to ndupdateXXX, NOTE: this variable is not used - we have to search for goopdate in the source code
 _MAIN_DLL_BASE_NAME = 'goopdate'
 # "Google Inc." must not be removed from the copyright string. This literal also
 # appears as LegalCopyright in the VERSIONINFO section of .rc files.
