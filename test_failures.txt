@@ -1,29 +1,7 @@
-X bcj2_encoder_unittest
-X client_utils_unittest
-X help_url_builder_unittest
-X install_self_no_xml_parser_unittest
-O omaha_customization_goopdate_apis_unittest
-X omaha_customization_unittest
-O omaha_customization_update_apis_unittest
-X omaha_ui_unittest
-X update_plugin_unittest
-X omaha_unittest
-
-
-The following 4 tests failed:
-
-scons-out\dbg-win\staging\omaha_unittest.exe
-scons-out\dbg-win\tests\omaha_customization_goopdate_apis_unittest.exe
-scons-out\dbg-win\tests\omaha_customization_unittest.exe
-scons-out\dbg-win\tests\omaha_customization_update_apis_unittest.exe
-
-
 [ RUN      ] AtlAssertTest.AtlAssert
 unknown file: error: SEH exception with code 0xc0000005 thrown in the test body.
 
 [  FAILED  ] AtlAssertTest.AtlAssert (0 ms)
-
-
 
 [ RUN      ] ProcessTest.ExcludeProcess
 base\process_unittest.cc(125): error: Value of: process_ids.size()
@@ -31,150 +9,58 @@ base\process_unittest.cc(125): error: Value of: process_ids.size()
 Expected: 0
 [  FAILED  ] ProcessTest.ExcludeProcess (16 ms)
 
-
 [ RUN      ] ScheduledTaskUtilsTest.ScheduledTasksV2
-common\scheduled_task_utils_unittest.cc(164): error: Value of: v2::IsScheduledTa
-skRunning(kSchedTestTaskName)
+common\scheduled_task_utils_unittest.cc(164): error: Value of: v2::IsScheduledTaskRunning(kSchedTestTaskName)
   Actual: false
 Expected: true
 [  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2 (140 ms)
 
-
-
 [ RUN      ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning
-core\google_update_core_unittest.cc(201): error: service_com.CoCreateInstance(__
-uuidof(GoogleUpdateCoreClass)) failed with error 0x80080005
-core\google_update_core_unittest.cc(92): error: Value of: google_update_core !=
-NULL
+core\google_update_core_unittest.cc(201): error: service_com.CoCreateInstance(__uuidof(GoogleUpdateCoreClass)) failed with error 0x80080005
+core\google_update_core_unittest.cc(92): error: Value of: google_update_core != NULL
   Actual: false
 Expected: true
 [  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning (31735 ms)
 
+### RUN ALL TESTS ###
+[  FAILED  ] AtlAssertTest.AtlAssert
+[  FAILED  ] BrowserUtilsDefaultBrowserSavedTest.GetDefaultBrowserType_IE
+[  FAILED  ] ProcessTest.ExcludeProcess
+[  FAILED  ] PingTest.SendString
+[  FAILED  ] PingTest.HandlePing
+[  FAILED  ] PingTest.SendInProcess
+[  FAILED  ] PingTest.SendPersistedPings
+[  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2
+[  FAILED  ] StatsUploaderTest.AggregateAndReportMetrics
+[  FAILED  ] WebServicesClientTest.Send
+[  FAILED  ] WebServicesClientTest.SendUsingCup
+[  FAILED  ] WebServicesClientTest.SendForcingHttps
+[  FAILED  ] WebServicesClientTest.SendWithCustomHeader
+[  FAILED  ] WebServicesClientTest.SendString
+[  FAILED  ] WebServicesClientTest.SendStringWithCustomHeader
+[  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning
+[  FAILED  ] CrashTest.Report_OmahaCrash
+[  FAILED  ] CrashTest.Report_ProductCrash
+[  FAILED  ] CrashTest.WriteMinidump
+[  FAILED  ] WorkerWithTwoAppsTest.CheckForUpdateAsync_Large
+[  FAILED  ] WorkerWithTwoAppsTest.DownloadAsyncThenDownloadAndInstallAsync_Large
+[  FAILED  ] WorkerWithTwoAppsTest.DownloadAndInstallAsyncWithoutDownload_Large
+[  FAILED  ] NetworkRequestTest.RetriesNegativeTest
+[  FAILED  ] NetworkRequestTest.RetriesNegativeTestUrlmon
+[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_Machine
+[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_User
+[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileCollision
+[  FAILED  ] GoogleUpdateRecoveryTest.VerifyFileSignature_SignedValid
+[  FAILED  ] GoogleUpdateRecoveryTest.ProductionServerResponseTest
+[  FAILED  ] SetupGoogleUpdateMachineTest.InstallAndUninstallMsiHelper
+[  FAILED  ] SetupGoogleUpdateMachineTest.InstallMsiHelper_OverinstallDifferentMsiBuild
 
+InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerSucceeds
+InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
+InstallerWrapperMachineTest.InstallApp_MsiInstallerSucceeds
+InstallerWrapperMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
 
-[ RUN      ] AppBundlePopulatedRegistryUserTest.createInstalledApp_Present_TwoAp
-ps
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"Google Application"
-[  FAILED  ] AppBundlePopulatedRegistryUserTest.createInstalledApp_Present_TwoAp
-ps (281 ms)
-[ RUN      ] AppBundlePopulatedRegistryUserTest.createInstalledApp_SameAppTwice
-[       OK ] AppBundlePopulatedRegistryUserTest.createInstalledApp_SameAppTwice
-(79 ms)
-[ RUN      ] AppBundlePopulatedRegistryUserTest.createInstalledApp_NotPresent
-[       OK ] AppBundlePopulatedRegistryUserTest.createInstalledApp_NotPresent (3
-1 ms)
-[ RUN      ] AppBundlePopulatedRegistryUserTest.createInstalledApp_NoAppsRegiste
-red
-[       OK ] AppBundlePopulatedRegistryUserTest.createInstalledApp_NoAppsRegiste
-red (16 ms)
-[ RUN      ] AppBundlePopulatedRegistryUserTest.createInstalledApp_AfterUpdateCh
-eck
-[       OK ] AppBundlePopulatedRegistryUserTest.createInstalledApp_AfterUpdateCh
-eck (32 ms)
-[ RUN      ] AppBundlePopulatedRegistryUserTest.createAllInstalledApps
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"Google Application"
-[  FAILED  ] AppBundlePopulatedRegistryUserTest.createAllInstalledApps (46 ms)
-[ RUN      ] AppBundlePopulatedRegistryUserTest.createAllInstalledApps_InvalidPv
-ValueType
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"Google Application"
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"Google Application"
-[  FAILED  ] AppBundlePopulatedRegistryUserTest.createAllInstalledApps_InvalidPv
-ValueType (63 ms)
-
-
-[ RUN      ] AppManagerReadAppPersistentDataMachineTest.ReadUninstalledAppPersis
-tentData_UninstalledApp
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataMachineTest.ReadUninstalledAppPersis
-tentData_UninstalledApp (47 ms)
-[ RUN      ] AppManagerReadAppPersistentDataMachineTest.ClientStateExistsWithout
-PvOrClientsKey
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataMachineTest.ClientStateExistsWithout
-PvOrClientsKey (15 ms)
-[----------] 6 tests from AppManagerReadAppPersistentDataMachineTest (172 ms tot
-al)
-
-[----------] 11 tests from AppManagerReadAppPersistentDataUserTest
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.AppExists
-[       OK ] AppManagerReadAppPersistentDataUserTest.AppExists (31 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.AppExists_NoDisplayName
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.AppExists_NoDisplayName (31
- ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.AppExists_EmptyDisplayName
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.AppExists_EmptyDisplayName
-(31 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.EulaNotAccepted
-[       OK ] AppManagerReadAppPersistentDataUserTest.EulaNotAccepted (31 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.EulaAccepted
-[       OK ] AppManagerReadAppPersistentDataUserTest.EulaAccepted (15 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.TwoApps
-[       OK ] AppManagerReadAppPersistentDataUserTest.TwoApps (31 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.NoClientState
-[       OK ] AppManagerReadAppPersistentDataUserTest.NoClientState (47 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersisten
-tData_UninstalledApp
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersisten
-tData_UninstalledApp (31 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersisten
-tData_EulaNotAccepted
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ReadUninstalledAppPersisten
-tData_EulaNotAccepted (78 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithoutPvO
-rClientsKey
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithoutPvO
-rClientsKey (31 ms)
-[ RUN      ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithEmptyP
-vNoClientsKey
-goopdate\app_bundle_unittest.cc(104): error: Value of: actual.display_name()
-  Actual: L"Ninja Deploy Application"
-Expected: expected.display_name()
-Which is: L"NinjaDeploy Application"
-[  FAILED  ] AppManagerReadAppPersistentDataUserTest.ClientStateExistsWithEmptyP
-vNoClientsKey (31 ms)
+These tests use a small MSI installer in testing\unittest_support that is hardwired
+to write some data to the the Google Update registry paths. The WiX sources for
+this MSI are in test\test_foo.wxs.xml -- update this to contain your company and
+product name, build the new MSI, and drop it into unittest_support.
