@@ -1,3 +1,5 @@
+FAILURES BEFORE EXE NAME CUSTOMIZATION
+
 [ RUN      ] AtlAssertTest.AtlAssert
 unknown file: error: SEH exception with code 0xc0000005 thrown in the test body.
 

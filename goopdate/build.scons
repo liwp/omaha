@@ -65,8 +65,8 @@ def BuildCOMForwarder(cmd_line_switch,
 
 
 # Build the broker forwarder and legacy on-demand.
-BuildCOMForwarder('/broker', 'GoogleUpdateBroker')
-BuildCOMForwarder('/ondemand', 'GoogleUpdateOnDemand')
+BuildCOMForwarder('/broker', 'NinjaDeployUpdateBroker')
+BuildCOMForwarder('/ondemand', 'NinjaDeployUpdateOnDemand')
 
 #
 # Build COM libraries and headers.
