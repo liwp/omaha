@@ -71,8 +71,7 @@ TEST FAILURES AFTER EXE NAME CHANGE (58)
 [  FAILED  ] AtlAssertTest.AtlAssert
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionNotFound
-[  FAILED  ] GoopdateUtilsRegistryProtectedWithUserFolderPathsTest.BuildGoogleUpdateExePath_UserVersionFound
-[  FAILED  ] GoopdateUtilsRegistryProtectedWithUserFolderPathsTest.BuildGoogleUpdateExePath_UserVersionNotFound
+[  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.StartGoogleUpdateWithArgs_MachineVersionVersionDoesNotExist
 [  FAILED  ] PingTest.LoadPersistedPings_NoPersistedPings
 [  FAILED  ] PingTest.LoadPersistedPings
 [  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2

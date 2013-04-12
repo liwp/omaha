@@ -998,7 +998,7 @@ TEST_F(GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest,
   CString program_files_path;
   EXPECT_SUCCEEDED(GetFolderPath(CSIDL_PROGRAM_FILES, &program_files_path));
   EXPECT_STREQ(program_files_path + _T("\\") + SHORT_COMPANY_NAME +
-               _T("\\") + PRODUCT_NAME + _T("\\GoogleUpdate.exe"),
+               _T("\\") + PRODUCT_NAME + _T("\\NinjaDeployUpdate.exe"),
                path);
 }
 
@@ -1009,14 +1009,14 @@ TEST_F(GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest,
   CString program_files_path;
   EXPECT_SUCCEEDED(GetFolderPath(CSIDL_PROGRAM_FILES, &program_files_path));
   EXPECT_STREQ(program_files_path + _T("\\") + SHORT_COMPANY_NAME +
-               _T("\\") + PRODUCT_NAME + _T("\\GoogleUpdate.exe"),
+               _T("\\") + PRODUCT_NAME + _T("\\NinjaDeployUpdate.exe"),
                path);
 
   // Test when the key exists but the value doesn't.
   ASSERT_SUCCEEDED(RegKey::CreateKey(MACHINE_REG_CLIENTS_GOOPDATE));
   path = BuildGoogleUpdateExePath(true);
   EXPECT_STREQ(program_files_path + _T("\\") + SHORT_COMPANY_NAME +
-               _T("\\") + PRODUCT_NAME + _T("\\GoogleUpdate.exe"),
+               _T("\\") + PRODUCT_NAME + _T("\\NinjaDeployUpdate.exe"),
                path);
 }
 
@@ -1033,7 +1033,7 @@ TEST_F(GoopdateUtilsRegistryProtectedWithUserFolderPathsTest,
   EXPECT_SUCCEEDED(GetFolderPath(CSIDL_LOCAL_APPDATA, &user_appdata));
   CString expected_path;
   expected_path.Format(_T("%s\\") SHORT_COMPANY_NAME _T("\\")
-                       PRODUCT_NAME _T("\\GoogleUpdate.exe"),
+                       PRODUCT_NAME _T("\\NinjaDeployUpdate.exe"),
                        user_appdata);
   EXPECT_STREQ(expected_path, path);
 }
@@ -1044,7 +1044,7 @@ TEST_F(GoopdateUtilsRegistryProtectedWithUserFolderPathsTest,
   EXPECT_SUCCEEDED(GetFolderPath(CSIDL_LOCAL_APPDATA, &user_appdata));
   CString expected_path;
   expected_path.Format(_T("%s\\") SHORT_COMPANY_NAME _T("\\")
-                       PRODUCT_NAME _T("\\GoogleUpdate.exe"),
+                       PRODUCT_NAME _T("\\NinjaDeployUpdate.exe"),
                        user_appdata);
 
   // Test when the key doesn't exist.
