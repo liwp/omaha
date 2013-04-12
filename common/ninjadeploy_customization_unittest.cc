@@ -75,15 +75,15 @@ TEST(NinjaDeployCustomizationTest, Constants_BuildFiles) {
 #endif
 
   // Primary omaha_version_utils values.
-  EXPECT_STREQ(_T("npGoogleOneClick"), ONECLICK_PLUGIN_NAME);
-  EXPECT_STREQ(_T("npGoogleUpdate"), UPDATE_PLUGIN_NAME);
+  EXPECT_STREQ(_T("npNinjaDeployOneClick"), ONECLICK_PLUGIN_NAME);
+  EXPECT_STREQ(_T("npNinjaDeployUpdate"), UPDATE_PLUGIN_NAME);
   EXPECT_STREQ(_T("GoopdateBho"), BHO_NAME);
 
   // Filenames from omaha_version_utils.
   EXPECT_STREQ(
-      _T("npGoogleOneClick") _T(ONECLICK_PLUGIN_VERSION_ANSI) _T(".dll"),
+      _T("npNinjaDeployOneClick") _T(ONECLICK_PLUGIN_VERSION_ANSI) _T(".dll"),
       ONECLICK_PLUGIN_FILENAME);
-  EXPECT_STREQ(_T("npGoogleUpdate") _T(UPDATE_PLUGIN_VERSION_ANSI) _T(".dll"),
+  EXPECT_STREQ(_T("npNinjaDeployUpdate") _T(UPDATE_PLUGIN_VERSION_ANSI) _T(".dll"),
                UPDATE_PLUGIN_FILENAME);
   EXPECT_STREQ(_T("GoopdateBho.dll"), BHO_FILENAME);
 }
@@ -116,17 +116,17 @@ TEST(NinjaDeployCustomizationTest, Constants_Names) {
 #endif  // GOOGLE_UPDATE_BUILD
 
   // Filename bases
-  EXPECT_STREQ(_T("GoogleUpdate"), MAIN_EXE_BASE_NAME);
+  EXPECT_STREQ(_T("NinjaDeployUpdate"), MAIN_EXE_BASE_NAME);
   EXPECT_STREQ(_T("goopdate"), MAIN_DLL_BASE_NAME);
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_Filenames) {
-  EXPECT_STREQ(_T("GoogleUpdate.exe"), kOmahaShellFileName);
-  EXPECT_STREQ(_T("GoogleCrashHandler.exe"), kCrashHandlerFileName);
+  EXPECT_STREQ(_T("NinjaDeployUpdate.exe"), kOmahaShellFileName);
+  EXPECT_STREQ(_T("NinjaDeployCrashHandler.exe"), kCrashHandlerFileName);
   EXPECT_STREQ(_T("goopdate.dll"), kOmahaDllName);
   EXPECT_STREQ(_T("goopdateres_%s.dll"), kOmahaResourceDllNameFormat);
-  EXPECT_STREQ(_T("GoogleUpdateBroker.exe"), kOmahaBrokerFileName);
-  EXPECT_STREQ(_T("GoogleUpdateOnDemand.exe"), kOmahaOnDemandFileName);
+  EXPECT_STREQ(_T("NinjaDeployUpdateBroker.exe"), kOmahaBrokerFileName);
+  EXPECT_STREQ(_T("NinjaDeployUpdateOnDemand.exe"), kOmahaOnDemandFileName);
   EXPECT_STREQ(_T("psmachine.dll"), kPSFileNameMachine);
   EXPECT_STREQ(_T("psuser.dll"), kPSFileNameUser);
 }
@@ -213,10 +213,10 @@ TEST(NinjaDeployCustomizationTest, Constants_RegistryValues) {
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_MsiMsp) {
-  EXPECT_STREQ(_T("GoogleUpdateHelper.msi"), kHelperInstallerName);
+  EXPECT_STREQ(_T("NinjaDeployUpdateHelper.msi"), kHelperInstallerName);
   EXPECT_STREQ(_T("{A92DAB39-4E2C-4304-9AB6-BC44E68B55E2}"),
                kHelperInstallerProductGuid);
-  EXPECT_STREQ(_T("GoogleUpdateHelperPatch.msp"), kHelperPatchName);
+  EXPECT_STREQ(_T("NinjaDeployUpdateHelperPatch.msp"), kHelperPatchName);
   EXPECT_STREQ(_T("{E0D0D2C9-5836-4023-AB1D-54EC3B90AD03}"), kHelperPatchGuid);
 }
 
@@ -266,8 +266,8 @@ TEST(NinjaDeployCustomizationTest, Constants_Debug) {
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_Logging) {
-  EXPECT_STREQ(_T("GoogleUpdate.ini"), kLogConfigFileName);
-  EXPECT_STREQ(_T("GoogleUpdate.log"), kDefaultLogFileName);
+  EXPECT_STREQ(_T("NinjaDeployUpdate.ini"), kLogConfigFileName);
+  EXPECT_STREQ(_T("NinjaDeployUpdate.log"), kDefaultLogFileName);
 }
 
 // These should not change during customization.
@@ -316,7 +316,7 @@ TEST(NinjaDeployCustomizationTest, Constants_Services) {
   EXPECT_STREQ(_T("vara"), kServicePrefix);
   EXPECT_STREQ(_T("varam"), kMediumServicePrefix);
 
-  EXPECT_STREQ(_T("GoogleUpdate.exe"), kServiceFileName);
+  EXPECT_STREQ(_T("NinjaDeployUpdate.exe"), kServiceFileName);
 }
 
 TEST(NinjaDeployCustomizationTest, Constants_ScheduledTasks) {
