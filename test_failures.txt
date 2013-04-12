@@ -72,8 +72,6 @@ TEST FAILURES AFTER EXE NAME CHANGE (58)
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionNotFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.StartGoogleUpdateWithArgs_MachineVersionVersionDoesNotExist
-[  FAILED  ] PingTest.LoadPersistedPings_NoPersistedPings
-[  FAILED  ] PingTest.LoadPersistedPings
 [  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2
 [  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning
 [  FAILED  ] DownloadManagerTest.GetMessageForError
