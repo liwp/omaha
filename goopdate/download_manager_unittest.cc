@@ -1192,7 +1192,7 @@ TEST(DownloadManagerTest, GetMessageForError) {
   EXPECT_STREQ(
       _T("The installer could not connect to the Internet. Ensure that your ")
       _T("computer is connected to the Internet and your firewall allows ")
-      _T("GoogleUpdate.exe to connect then try again."),
+      _T("NinjaDeployUpdate.exe to connect then try again."),
       DownloadManager::GetMessageForError(
           ErrorContext(GOOPDATE_E_NO_NETWORK), kEnglish));
 
