@@ -73,7 +73,6 @@ TEST FAILURES AFTER EXE NAME CHANGE (58)
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionNotFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.StartGoogleUpdateWithArgs_MachineVersionVersionDoesNotExist
 [  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2
-[  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning
 [  FAILED  ] DownloadManagerTest.GetMessageForError
 [  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerSucceeds
 [  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
