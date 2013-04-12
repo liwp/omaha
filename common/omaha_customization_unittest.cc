@@ -230,16 +230,30 @@ TEST(OmahaCustomizationTest, Constants_BrandCode) {
   EXPECT_STREQ(_T("GGLS"), kDefaultGoogleUpdateBrandCode);
 }
 
+// NDTODO:
+// TEST(OmahaCustomizationTest, Constants_Addresses) {
+//   EXPECT_STREQ(_T("www.google.com"), kGoogleHttpServer);
+//   EXPECT_STREQ(_T("www.google.com"), kGoopdateServer);
+//   EXPECT_STREQ(_T("https://www.google.com/update2"), kUrlUpdateCheck);
+//   EXPECT_STREQ(_T("http://www.google.com/update2"), kUrlPing);
+//   EXPECT_STREQ(_T("http://www.google.com/report"), kUrlCrashReport);
+//   EXPECT_STREQ(_T("http://www.google.com/support/installer/?"), kUrlMoreInfo);
+//   EXPECT_STREQ(_T("http://www.google.com/check2"),
+//                kUrlCodeRedCheck);
+//   EXPECT_STREQ(_T("http://www.google.com/usagestats"),
+//                kUrlUsageStatsReport);
+// }
+
 TEST(OmahaCustomizationTest, Constants_Addresses) {
   EXPECT_STREQ(_T("www.google.com"), kGoogleHttpServer);
-  EXPECT_STREQ(_T("www.google.com"), kGoopdateServer);
-  EXPECT_STREQ(_T("https://www.google.com/update2"), kUrlUpdateCheck);
-  EXPECT_STREQ(_T("http://www.google.com/update2"), kUrlPing);
-  EXPECT_STREQ(_T("http://www.google.com/report"), kUrlCrashReport);
+  EXPECT_STREQ(_T("tools.google.com"), kGoopdateServer);
+  EXPECT_STREQ(_T("https://tools.google.com/service/update2"), kUrlUpdateCheck);
+  EXPECT_STREQ(_T("http://tools.google.com/service/update2"), kUrlPing);
+  EXPECT_STREQ(_T("http://clients2.google.com/cr/report"), kUrlCrashReport);
   EXPECT_STREQ(_T("http://www.google.com/support/installer/?"), kUrlMoreInfo);
-  EXPECT_STREQ(_T("http://www.google.com/check2"),
+  EXPECT_STREQ(_T("http://cr-tools.clients.google.com/service/check2"),
                kUrlCodeRedCheck);
-  EXPECT_STREQ(_T("http://www.google.com/usagestats"),
+  EXPECT_STREQ(_T("http://clients5.google.com/tbproxy/usagestats"),
                kUrlUsageStatsReport);
 }
 
