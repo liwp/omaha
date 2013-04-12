@@ -67,14 +67,14 @@ const TCHAR kDummyAppLang[] = _T("en-us");
 const TCHAR kTempDirectory[] = _T("C:\\WINDOWS\\Temp");
 
 const TCHAR kFullMachineOmahaMainKeyPath[] =
-    _T("HKLM\\Software\\Google\\Update\\");
+    _T("HKLM\\Software\\NinjaDeploy\\Update\\");
 const TCHAR kFullUserOmahaMainKeyPath[] =
-    _T("HKCU\\Software\\Google\\Update\\");
+    _T("HKCU\\Software\\NinjaDeploy\\Update\\");
 const TCHAR kFullMachineOmahaClientKeyPath[] =
-    _T("HKLM\\Software\\Google\\Update\\Clients\\")
+    _T("HKLM\\Software\\NinjaDeploy\\Update\\Clients\\")
     _T("{5CB309C8-48AD-4C7A-8379-15696DF9D31D}");
 const TCHAR kFullUserOmahaClientKeyPath[] =
-    _T("HKCU\\Software\\Google\\Update\\Clients\\")
+    _T("HKCU\\Software\\NinjaDeploy\\Update\\Clients\\")
     _T("{5CB309C8-48AD-4C7A-8379-15696DF9D31D}");
 
 const HRESULT kDummyNoFileError = 0x80041234;
@@ -91,9 +91,9 @@ const TCHAR* const kInvalidFileUrl = _T("http://www.google.com/robots.txt");
 
 // These methods were copied from omaha/testing/omaha_unittest.cpp.
 const TCHAR kRegistryHiveOverrideRoot[] =
-    _T("HKCU\\Software\\Google\\Update\\UnitTest\\");
+    _T("HKCU\\Software\\NinjaDeploy\\Update\\UnitTest\\");
 
-const TCHAR kExpectedUrlForDummyAppAndNoOmahaValues[] = _T("http://www.google.com/check2?appid=%7B8E472B0D-3E8B-43b1-B89A-E8506AAF1F16%7D&appversion=3.4.5.6&applang=en-us&machine=1&version=0.0.0.0&osversion=");  // NOLINT
+const TCHAR kExpectedUrlForDummyAppAndNoOmahaValues[] = _T("http://cr-tools.clients.google.com/service/check2?appid=%7B8E472B0D-3E8B-43b1-B89A-E8506AAF1F16%7D&appversion=3.4.5.6&applang=en-us&machine=1&version=0.0.0.0&osversion=");  // NOLINT
 const int kExpectedUrlForDummyAppAndNoOmahaValuesLength =
     arraysize(kExpectedUrlForDummyAppAndNoOmahaValues) - 1;
 
@@ -463,7 +463,7 @@ TEST_F(GoogleUpdateRecoveryTest, FixGoogleUpdate_NoFile_User) {
 
 TEST_F(GoogleUpdateRecoveryRegistryProtectedTest,
        FixGoogleUpdate_AllValues_MachineApp) {
-  const TCHAR kExpectedUrl[] = _T("http://www.google.com/check2?appid=%7B8E472B0D-3E8B-43b1-B89A-E8506AAF1F16%7D&appversion=3.4.5.6&applang=en-us&machine=1&version=5.6.78.1&osversion=");  // NOLINT
+  const TCHAR kExpectedUrl[] = _T("http://cr-tools.clients.google.com/service/check2?appid=%7B8E472B0D-3E8B-43b1-B89A-E8506AAF1F16%7D&appversion=3.4.5.6&applang=en-us&machine=1&version=5.6.78.1&osversion=");  // NOLINT
 
   const CString prev_tmp = GetTmp();
   EXPECT_TRUE(::SetEnvironmentVariable(_T("TMP"), kTempDirectory));
@@ -488,7 +488,7 @@ TEST_F(GoogleUpdateRecoveryRegistryProtectedTest,
 
 TEST_F(GoogleUpdateRecoveryRegistryProtectedTest,
        FixGoogleUpdate_AllValues_UserApp) {
-  const TCHAR kExpectedUrl[] = _T("http://www.google.com/check2?appid=%7B8E472B0D-3E8B-43b1-B89A-E8506AAF1F16%7D&appversion=3.4.5.6&applang=en-us&machine=0&version=5.6.78.1&osversion=");  // NOLINT
+  const TCHAR kExpectedUrl[] = _T("http://cr-tools.clients.google.com/service/check2?appid=%7B8E472B0D-3E8B-43b1-B89A-E8506AAF1F16%7D&appversion=3.4.5.6&applang=en-us&machine=0&version=5.6.78.1&osversion=");  // NOLINT
 
   const CString prev_tmp = GetTmp();
   EXPECT_TRUE(::SetEnvironmentVariable(_T("TMP"), kTempDirectory));
@@ -526,7 +526,7 @@ TEST_F(GoogleUpdateRecoveryRegistryProtectedTest,
 
 TEST_F(GoogleUpdateRecoveryRegistryProtectedTest,
        FixGoogleUpdate_EmptyAppInfo) {
-  const TCHAR kExpectedUrl[] = _T("http://www.google.com/check2?appid=&appversion=&applang=&machine=1&version=0.0.0.0&osversion=");  // NOLINT
+  const TCHAR kExpectedUrl[] = _T("http://cr-tools.clients.google.com/service/check2?appid=&appversion=&applang=&machine=1&version=0.0.0.0&osversion=");  // NOLINT
 
   EXPECT_EQ(kDummyNoFileError, FixGoogleUpdate(_T(""),
                                                _T(""),
@@ -794,7 +794,7 @@ TEST_F(GoogleUpdateRecoveryTest, VerifyFileSignature_SignedValid) {
 }
 
 TEST_F(GoogleUpdateRecoveryTest, VerifyFileSignature_NotSigned) {
-  const TCHAR kUnsignedExecutable[] = _T("GoogleUpdate_unsigned.exe");
+  const TCHAR kUnsignedExecutable[] = _T("NinjaDeployUpdate_unsigned.exe");
 
   CString executable_full_path(app_util::GetCurrentModuleDirectory());
   EXPECT_TRUE(::PathAppend(CStrBuf(executable_full_path, MAX_PATH),
@@ -893,7 +893,7 @@ TEST_F(GoogleUpdateRecoveryTest, VerifyRepairFileMarkup_InvalidMarkups) {
   EXPECT_EQ(HRESULT_FROM_WIN32(ERROR_RESOURCE_DATA_NOT_FOUND),
             VerifyRepairFileMarkup(kNoResourcesExecutable));
 
-  const TCHAR kResourcesButNoMarkupExecutable[] = _T("GoogleUpdate.exe");
+  const TCHAR kResourcesButNoMarkupExecutable[] = _T("NinjaDeployUpdate.exe");
   EXPECT_EQ(HRESULT_FROM_WIN32(ERROR_RESOURCE_TYPE_NOT_FOUND),
             VerifyRepairFileMarkup(kResourcesButNoMarkupExecutable));
 
