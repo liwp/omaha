@@ -67,43 +67,24 @@ to write some data to the the Google Update registry paths. The WiX sources for
 this MSI are in test\test_foo.wxs.xml -- update this to contain your company and
 product name, build the new MSI, and drop it into unittest_support.
 
-TEST FAILURES AFTER EXE NAME CHANGE
+TEST FAILURES AFTER EXE NAME CHANGE (58)
 [  FAILED  ] AtlAssertTest.AtlAssert
-[  FAILED  ] ExtractorTest.EmbedExtract
-[  FAILED  ] ExtractorTest.EmbedAppendExtract
-[  FAILED  ] ExtractorTest.AlreadyTaggedError
 [  FAILED  ] UtilsTest.AddAllowedAce
 [  FAILED  ] CommandLineBuilder.BuildUpdateAndGetCommandLineWithGoogleUpdateExe
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionNotFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithUserFolderPathsTest.BuildGoogleUpdateExePath_UserVersionFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithUserFolderPathsTest.BuildGoogleUpdateExePath_UserVersionNotFound
-[  FAILED  ] PingTest.SendString
-[  FAILED  ] PingTest.HandlePing
-[  FAILED  ] PingTest.SendInProcess
 [  FAILED  ] PingTest.LoadPersistedPings_NoPersistedPings
 [  FAILED  ] PingTest.LoadPersistedPings
-[  FAILED  ] PingTest.SendPersistedPings
 [  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2
-[  FAILED  ] StatsUploaderTest.AggregateAndReportMetrics
-[  FAILED  ] WebServicesClientTest.Send
-[  FAILED  ] WebServicesClientTest.SendUsingCup
-[  FAILED  ] WebServicesClientTest.SendForcingHttps
-[  FAILED  ] WebServicesClientTest.SendWithCustomHeader
-[  FAILED  ] WebServicesClientTest.SendString
-[  FAILED  ] WebServicesClientTest.SendStringWithCustomHeader
 [  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning
-[  FAILED  ] CrashTest.Report_OmahaCrash
-[  FAILED  ] CrashTest.Report_ProductCrash
-[  FAILED  ] CrashTest.WriteMinidump
 [  FAILED  ] DownloadManagerTest.GetMessageForError
 [  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerSucceeds
 [  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
 [  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerSucceeds
 [  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
-[  FAILED  ] WorkerWithTwoAppsTest.CheckForUpdateAsync_Large
 [  FAILED  ] WorkerWithTwoAppsTest.DownloadAsyncThenDownloadAndInstallAsync_Large
-[  FAILED  ] WorkerWithTwoAppsTest.DownloadAndInstallAsyncWithoutDownload_Large
 [  FAILED  ] WorkerUtilsTest.FormatMessageForNetworkError
 [  FAILED  ] NetworkRequestTest.RetriesNegativeTest
 [  FAILED  ] NetworkRequestTest.RetriesNegativeTestUrlmon
@@ -113,7 +94,17 @@ TEST FAILURES AFTER EXE NAME CHANGE
 [  FAILED  ] GoogleUpdateRecoveryTest.VerifyFileSignature_SignedValid
 [  FAILED  ] GoogleUpdateRecoveryTest.VerifyFileSignature_NotSigned
 [  FAILED  ] GoogleUpdateRecoveryTest.VerifyRepairFileMarkup_InvalidMarkups
-[  FAILED  ] GoogleUpdateRecoveryTest.ProductionServerResponseTest
+[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_MachineApp
+[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_UserApp
+[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_NoOmahaRegKeys
+[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_EmptyAppInfo
+[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsZeroDwordInHkcu
+[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsNonZeroDword
+[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsZeroDword64
+[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsNonZeroDword64
+[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsZeroAsString
+[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AutoUpdateCheckPeriodMinutesIsZeroAsBinary
+[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_GroupPolicyKeyExistsButNoAutoUpdateCheckPeriodMinutes
 [  FAILED  ] SetupUserTest.StopGoogleUpdateAndWait_ProcessesDoNotStop
 [  FAILED  ] SetupUserTest.TerminateCoreProcesses_BothTypesRunningAndSimilarArgsProcess
 [  FAILED  ] SetupMachineTest.StopGoogleUpdateAndWait_ProcessesDoNotStop
