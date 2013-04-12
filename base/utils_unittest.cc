@@ -556,7 +556,7 @@ TEST(UtilsTest, AddAllowedAce) {
 
   EXPECT_SUCCEEDED(File::Copy(
       ConcatenatePath(app_util::GetCurrentModuleDirectory(),
-                      _T("GoogleUpdate.exe")),
+                      _T("NinjaDeployUpdate.exe")),
       test_file_path,
       false));
 
