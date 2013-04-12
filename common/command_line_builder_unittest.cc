@@ -214,19 +214,19 @@ TEST(CommandLineBuilder, BuildUpdateWithSessionId) {
       cmd_line);
 }
 
-// The /update builder works when not used with GoogleUpdate.exe.
+// The /update builder works when not used with NinjaDeployUpdate.exe.
 TEST(CommandLineBuilder, BuildUpdateAndGetCommandLineWithNonGoogleUpdateExe) {
   CommandLineBuilder builder(COMMANDLINE_MODE_UPDATE);
-  CString cmd_line = builder.GetCommandLine(_T("C:\\GoogleUpdateSetup_en.exe"));
-  EXPECT_STREQ(_T("\"C:\\GoogleUpdateSetup_en.exe\" /update"), cmd_line);
+  CString cmd_line = builder.GetCommandLine(_T("C:\\NinjaDeployUpdateSetup_en.exe"));
+  EXPECT_STREQ(_T("\"C:\\NinjaDeployUpdateSetup_en.exe\" /update"), cmd_line);
 }
 
-// The /update builder should not be used with GoogleUpdate.exe directly.
+// The /update builder should not be used with NinjaDeployUpdate.exe directly.
 TEST(CommandLineBuilder, BuildUpdateAndGetCommandLineWithGoogleUpdateExe) {
   CommandLineBuilder builder(COMMANDLINE_MODE_UPDATE);
   ExpectAsserts expect_asserts;
-  CString cmd_line = builder.GetCommandLine(_T("C:\\GoogleUpdate.exe"));
-  EXPECT_STREQ(_T("\"C:\\GoogleUpdate.exe\" /update"), cmd_line);
+  CString cmd_line = builder.GetCommandLine(_T("C:\\NinjaDeployUpdate.exe"));
+  EXPECT_STREQ(_T("\"C:\\NinjaDeployUpdate.exe\" /update"), cmd_line);
 }
 
 TEST(CommandLineBuilder, BuildComServer) {

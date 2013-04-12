@@ -69,7 +69,6 @@ product name, build the new MSI, and drop it into unittest_support.
 
 TEST FAILURES AFTER EXE NAME CHANGE (58)
 [  FAILED  ] AtlAssertTest.AtlAssert
-[  FAILED  ] CommandLineBuilder.BuildUpdateAndGetCommandLineWithGoogleUpdateExe
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionNotFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithUserFolderPathsTest.BuildGoogleUpdateExePath_UserVersionFound
