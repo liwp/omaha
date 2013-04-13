@@ -95,12 +95,6 @@ TEST FAILURES AFTER EXE NAME CHANGE (37)
 [  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_MachineApp
 [  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_UserApp
 
-[  FAILED  ] SetupMachineTest.StopGoogleUpdateAndWait_ProcessesDoNotStop
-[  FAILED  ] SetupMachineTest.StopGoogleUpdateAndWait_MachineHandoffWorkerRunningAsUser
-[  FAILED  ] SetupMachineTest.StopGoogleUpdateAndWait_MachineLegacyInstallGoogleUpdateWorkerRunningAsUser
-[  FAILED  ] SetupMachineTest.StopGoogleUpdateAndWait_UserHandoffWorkerRunningAsSystem
-[  FAILED  ] SetupMachineTest.StopGoogleUpdateAndWait_UserLegacyInstallGoogleUpdateWorkerRunningAsSystem
-[  FAILED  ] SetupMachineTest.TerminateCoreProcesses_BothTypesRunningAndSimilarArgsProcess
 [  FAILED  ] SetupFilesUserTest.Install_NotOverInstall
 [  FAILED  ] SetupFilesUserTest.ShouldCopyShell_ExistingIsOlderButCompatible_1_2_131_7
 [  FAILED  ] SetupFilesUserTest.ShouldCopyShell_ExistingIsOlderButCompatible_1_2_183_9
