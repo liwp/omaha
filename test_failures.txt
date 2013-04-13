@@ -79,7 +79,6 @@ TEST FAILURES AFTER EXE NAME CHANGE (37)
 [  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerSucceeds
 [  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
 
-[  FAILED  ] WorkerUtilsTest.FormatMessageForNetworkError
 [  FAILED  ] NetworkRequestTest.RetriesNegativeTest
 [  FAILED  ] NetworkRequestTest.RetriesNegativeTestUrlmon
 [  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_Machine
