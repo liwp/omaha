@@ -73,22 +73,28 @@ TEST FAILURES AFTER EXE NAME CHANGE (37)
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionNotFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.StartGoogleUpdateWithArgs_MachineVersionVersionDoesNotExist
 [  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2
-(See above)
+
+// We need to update the foo WIX file (See above)
 [  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerSucceeds
 [  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
 [  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerSucceeds
 [  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
 
+// We get a 404 - presumably because we're looking for NinjaDeployUpdate.exe?
 [  FAILED  ] NetworkRequestTest.RetriesNegativeTest
 [  FAILED  ] NetworkRequestTest.RetriesNegativeTestUrlmon
+
+// Signature or timestamp invalid - presumably something is wrong with the test cert
+// (0x80096005 The timestamp signature and/or certificate could not be verified or is malformed.)
 [  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_Machine
 [  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_User
 [  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileCollision
 [  FAILED  ] GoogleUpdateRecoveryTest.VerifyFileSignature_SignedValid
+
+// The version number in the URL is 0.0.0.0 rather than the expected 5.6.78.1
 [  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_MachineApp
 [  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_UserApp
-[  FAILED  ] SetupUserTest.StopGoogleUpdateAndWait_ProcessesDoNotStop
-[  FAILED  ] SetupUserTest.TerminateCoreProcesses_BothTypesRunningAndSimilarArgsProcess
+
 [  FAILED  ] SetupMachineTest.StopGoogleUpdateAndWait_ProcessesDoNotStop
 [  FAILED  ] SetupMachineTest.StopGoogleUpdateAndWait_MachineHandoffWorkerRunningAsUser
 [  FAILED  ] SetupMachineTest.StopGoogleUpdateAndWait_MachineLegacyInstallGoogleUpdateWorkerRunningAsUser

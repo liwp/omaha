@@ -100,7 +100,7 @@ unittest_support += env.Replicate('$STAGING_DIR/unittest_support/omaha_1.3.x/',
 unittest_support += env.Replicate(
     target='$STAGING_DIR/unittest_support/does_not_shutdown/',
     source='$MAIN_DIR/testing/unittest_support/LongRunningSilent.exe',
-    REPLICATE_REPLACE=[('LongRunningSilent\\.exe', 'GoogleUpdate.exe')],
+    REPLICATE_REPLACE=[('LongRunningSilent\\.exe', 'NinjaDeployUpdate.exe')],
 )
 
 # download_cache test files
