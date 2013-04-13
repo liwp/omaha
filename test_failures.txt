@@ -67,7 +67,7 @@ to write some data to the the Google Update registry paths. The WiX sources for
 this MSI are in test\test_foo.wxs.xml -- update this to contain your company and
 product name, build the new MSI, and drop it into unittest_support.
 
-TEST FAILURES AFTER EXE NAME CHANGE (37)
+TEST FAILURES AFTER EXE NAME CHANGE (20)
 [  FAILED  ] AtlAssertTest.AtlAssert
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionNotFound
@@ -95,13 +95,6 @@ TEST FAILURES AFTER EXE NAME CHANGE (37)
 [  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_MachineApp
 [  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_UserApp
 
-[  FAILED  ] SetupFilesUserTest.Install_NotOverInstall
-[  FAILED  ] SetupFilesUserTest.ShouldCopyShell_ExistingIsOlderButCompatible_1_2_131_7
-[  FAILED  ] SetupFilesUserTest.ShouldCopyShell_ExistingIsOlderButCompatible_1_2_183_9
-[  FAILED  ] SetupFilesUserTest.ShouldCopyShell_ExistingIsOlderMinor
-[  FAILED  ] SetupFilesUserTest.ShouldCopyShell_ExistingIsOlderSameMinor
-[  FAILED  ] SetupFilesUserTest.ShouldCopyShell_ExistingHasNoVersion
-[  FAILED  ] SetupFilesMachineTest.Install_NotOverInstall
 [  FAILED  ] SetupGoogleUpdateMachineRegistryProtectedInHklmTest.InstallRegistryValues
 [  FAILED  ] SetupGoogleUpdateMachineTest.InstallAndUninstallMsiHelper
 [  FAILED  ] SetupGoogleUpdateMachineTest.InstallMsiHelper_OverinstallDifferentMsiBuild

@@ -174,11 +174,6 @@ class SetupFilesTest : public testing::Test {
     EXPECT_SUCCEEDED(FindFiles(version_path, _T("*.*"), &files));
     ASSERT_EQ(kExpectedFilesReturnedByFindFiles, files.size());
     int file_index = kExtraFilesReturnedByFindFiles;
-    EXPECT_STREQ(kCrashHandlerFileName, files[file_index++]);
-    EXPECT_STREQ(kOmahaShellFileName, files[file_index++]);
-    EXPECT_STREQ(kOmahaBrokerFileName, files[file_index++]);
-    EXPECT_STREQ(kHelperInstallerName, files[file_index++]);
-    EXPECT_STREQ(kOmahaOnDemandFileName, files[file_index++]);
     EXPECT_STREQ(kOmahaDllName, files[file_index++]);
 // TODO(omaha3): Enable as this is built.
 #if 0
@@ -239,6 +234,14 @@ class SetupFilesTest : public testing::Test {
     EXPECT_STREQ(_T("goopdateres_vi.dll"), files[file_index++]);
     EXPECT_STREQ(_T("goopdateres_zh-CN.dll"), files[file_index++]);
     EXPECT_STREQ(_T("goopdateres_zh-TW.dll"), files[file_index++]);
+
+    EXPECT_STREQ(kCrashHandlerFileName, files[file_index++]);
+    EXPECT_STREQ(kOmahaShellFileName, files[file_index++]);
+    EXPECT_STREQ(kOmahaBrokerFileName, files[file_index++]);
+    EXPECT_STREQ(kHelperInstallerName, files[file_index++]);
+    EXPECT_STREQ(kOmahaOnDemandFileName, files[file_index++]);
+
+
     EXPECT_STREQ(UPDATE_PLUGIN_FILENAME, files[file_index++]);
     EXPECT_STREQ(kPSFileNameMachine, files[file_index++]);
     EXPECT_STREQ(kPSFileNameUser, files[file_index++]);

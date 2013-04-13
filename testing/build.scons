@@ -76,17 +76,17 @@ unittest_support = env.Replicate('$STAGING_DIR/unittest_support/', [
 # Saved versions of Google Update for the Setup tests.
 unittest_support += env.Replicate(
     '$STAGING_DIR/unittest_support/omaha_1.2.131.7_shell/', [
-    'unittest_support/omaha_1.2.131.7_shell/GoogleUpdate.exe',
+    'unittest_support/omaha_1.2.131.7_shell/NinjaDeployUpdate.exe',
     ])
 unittest_support += env.Replicate(
     '$STAGING_DIR/unittest_support/omaha_1.2.183.9_shell/', [
-    'unittest_support/omaha_1.2.183.9_shell/GoogleUpdate.exe',
+    'unittest_support/omaha_1.2.183.9_shell/NinjaDeployUpdate.exe',
     ])
 unittest_support += env.Replicate('$STAGING_DIR/unittest_support/omaha_1.2.x/',
-    'unittest_support/omaha_1.2.x/GoogleUpdate.exe'
+    'unittest_support/omaha_1.2.x/NinjaDeployUpdate.exe'
     )
 unittest_support += env.Replicate('$STAGING_DIR/unittest_support/omaha_1.3.x/',
-    [ 'unittest_support/omaha_1.3.x/GoogleUpdate.exe',
+    [ 'unittest_support/omaha_1.3.x/NinjaDeployUpdate.exe',
       'unittest_support/omaha_1.3.x/goopdate.dll',
       'unittest_support/omaha_1.3.x/goopdateres_en.dll',
     ])
