@@ -1,80 +1,20 @@
-FAILURES BEFORE EXE NAME CUSTOMIZATION
-
-[ RUN      ] AtlAssertTest.AtlAssert
-unknown file: error: SEH exception with code 0xc0000005 thrown in the test body.
-
-[  FAILED  ] AtlAssertTest.AtlAssert (0 ms)
-
-[ RUN      ] ProcessTest.ExcludeProcess
-base\process_unittest.cc(125): error: Value of: process_ids.size()
-  Actual: 1
-Expected: 0
-[  FAILED  ] ProcessTest.ExcludeProcess (16 ms)
-
-[ RUN      ] ScheduledTaskUtilsTest.ScheduledTasksV2
-common\scheduled_task_utils_unittest.cc(164): error: Value of: v2::IsScheduledTaskRunning(kSchedTestTaskName)
-  Actual: false
-Expected: true
-[  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2 (140 ms)
-
-[ RUN      ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning
-core\google_update_core_unittest.cc(201): error: service_com.CoCreateInstance(__uuidof(GoogleUpdateCoreClass)) failed with error 0x80080005
-core\google_update_core_unittest.cc(92): error: Value of: google_update_core != NULL
-  Actual: false
-Expected: true
-[  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning (31735 ms)
-
-### RUN ALL TESTS ###
-[  FAILED  ] AtlAssertTest.AtlAssert
-[  FAILED  ] BrowserUtilsDefaultBrowserSavedTest.GetDefaultBrowserType_IE
-[  FAILED  ] ProcessTest.ExcludeProcess
-[  FAILED  ] PingTest.SendString
-[  FAILED  ] PingTest.HandlePing
-[  FAILED  ] PingTest.SendInProcess
-[  FAILED  ] PingTest.SendPersistedPings
-[  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2
-[  FAILED  ] StatsUploaderTest.AggregateAndReportMetrics
-[  FAILED  ] WebServicesClientTest.Send
-[  FAILED  ] WebServicesClientTest.SendUsingCup
-[  FAILED  ] WebServicesClientTest.SendForcingHttps
-[  FAILED  ] WebServicesClientTest.SendWithCustomHeader
-[  FAILED  ] WebServicesClientTest.SendString
-[  FAILED  ] WebServicesClientTest.SendStringWithCustomHeader
-[  FAILED  ] GoogleUpdateCoreTest.LaunchCmdElevated_ServiceRunning
-[  FAILED  ] CrashTest.Report_OmahaCrash
-[  FAILED  ] CrashTest.Report_ProductCrash
-[  FAILED  ] CrashTest.WriteMinidump
-[  FAILED  ] WorkerWithTwoAppsTest.CheckForUpdateAsync_Large
-[  FAILED  ] WorkerWithTwoAppsTest.DownloadAsyncThenDownloadAndInstallAsync_Large
-[  FAILED  ] WorkerWithTwoAppsTest.DownloadAndInstallAsyncWithoutDownload_Large
-[  FAILED  ] NetworkRequestTest.RetriesNegativeTest
-[  FAILED  ] NetworkRequestTest.RetriesNegativeTestUrlmon
-[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_Machine
-[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_User
-[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileCollision
-[  FAILED  ] GoogleUpdateRecoveryTest.VerifyFileSignature_SignedValid
-[  FAILED  ] GoogleUpdateRecoveryTest.ProductionServerResponseTest
-[  FAILED  ] SetupGoogleUpdateMachineTest.InstallAndUninstallMsiHelper
-[  FAILED  ] SetupGoogleUpdateMachineTest.InstallMsiHelper_OverinstallDifferentMsiBuild
-
-InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerSucceeds
-InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
-InstallerWrapperMachineTest.InstallApp_MsiInstallerSucceeds
-InstallerWrapperMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
-
-These tests use a small MSI installer in testing\unittest_support that is hardwired
-to write some data to the the Google Update registry paths. The WiX sources for
-this MSI are in test\test_foo.wxs.xml -- update this to contain your company and
-product name, build the new MSI, and drop it into unittest_support.
-
 TEST FAILURES AFTER EXE NAME CHANGE (20)
+// This seems to have always failed with an exception
 [  FAILED  ] AtlAssertTest.AtlAssert
+
+// ?
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionNotFound
 [  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.StartGoogleUpdateWithArgs_MachineVersionVersionDoesNotExist
+
+// Scheduled task is not running even when its been started
 [  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2
 
-// We need to update the foo WIX file (See above)
+// We need to update the foo WIX file:
+// These tests use a small MSI installer in testing\unittest_support that is hardwired
+// to write some data to the the Google Update registry paths. The WiX sources for
+// this MSI are in test\test_foo.wxs.xml -- update this to contain your company and
+// product name, build the new MSI, and drop it into unittest_support.
 [  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerSucceeds
 [  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
 [  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerSucceeds
@@ -95,6 +35,7 @@ TEST FAILURES AFTER EXE NAME CHANGE (20)
 [  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_MachineApp
 [  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_UserApp
 
+// SHGetFolderPath() fails with an ERROR_INVALID_DATA
 [  FAILED  ] SetupGoogleUpdateMachineRegistryProtectedInHklmTest.InstallRegistryValues
 [  FAILED  ] SetupGoogleUpdateMachineTest.InstallAndUninstallMsiHelper
 [  FAILED  ] SetupGoogleUpdateMachineTest.InstallMsiHelper_OverinstallDifferentMsiBuild
