@@ -91,7 +91,7 @@ private:
       _tprintf(_T("Product !!! Test Foo appears to be installed on this system.\r\n"));
       return false;
     }
-    if (RegistryValueExists(HKEY_LOCAL_MACHINE, REGSTR_PATH_RUN, _T("Google Update"))) {
+    if (RegistryValueExists(HKEY_LOCAL_MACHINE, REGSTR_PATH_RUN, _T("NinjaDeploy Update"))) {
       _tprintf(_T("Omaha Run key is present on this system.\r\n"));
       return false;
     }
@@ -107,7 +107,7 @@ private:
   }
 
   bool VerifyOmahaInstalled() {
-    if (!RegistryValueExists(HKEY_LOCAL_MACHINE, REGSTR_PATH_RUN, _T("Google Update"))) {
+    if (!RegistryValueExists(HKEY_LOCAL_MACHINE, REGSTR_PATH_RUN, _T("NinjaDeploy Update"))) {
       _tprintf(_T("Omaha Run key is missing on this system.\r\n"));
       return false;
     }

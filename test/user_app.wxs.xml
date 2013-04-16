@@ -1,12 +1,12 @@
 <?xml version='1.0'?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
    <Product Id='$(var.FooProductGuid)' Name='!!! User Test Foo' Language='1033'
-     Version="$(var.FooVersion)" Manufacturer='Google'
+     Version="$(var.FooVersion)" Manufacturer='Ninja Deploy'
      UpgradeCode='97781963-8283-4602-A9DA-CAE7A5536C75'>
      <Package Id='*'
        Description='User Test Foo'
-       Comments='Copyright 2007-2010 Google Inc.'
-       Manufacturer='Google Inc.'
+       Comments='Copyright 2007-2010 Google Inc., 2013 Ninja Deploy'
+       Manufacturer='Ninja Deploy'
        InstallerVersion='200'
        Compressed='yes' />
 
@@ -41,11 +41,11 @@
             </Directory>
             <Component Id='UserFooReg' Guid='$(var.FooComponentGuidRegistry)'>
               <RegistryValue Root='HKCU'
-                Key='Software\Google\Update\Clients\{104844D6-7DDA-460b-89F0-FBF8AFDD0A67}'
+                Key='Software\NinjaDeploy\Update\Clients\{104844D6-7DDA-460b-89F0-FBF8AFDD0A67}'
                 Name='name' Value="user_test_foo"
                 Action='write' Type='string' />
               <RegistryValue Root='HKCU'
-                Key='Software\Google\Update\Clients\{104844D6-7DDA-460b-89F0-FBF8AFDD0A67}'
+                Key='Software\NinjaDeploy\Update\Clients\{104844D6-7DDA-460b-89F0-FBF8AFDD0A67}'
                 Name='pv' Value="$(var.FooVersion)"
                 Action='write' Type='string' />
               <Condition>NOT (ALLUSERS)</Condition>
