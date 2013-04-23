@@ -1,11 +1,6 @@
-TEST FAILURES AFTER EXE NAME CHANGE (18)
+TEST FAILURES AFTER EXE NAME CHANGE (15)
 // This seems to have always failed with an exception
 [  FAILED  ] AtlAssertTest.AtlAssert
-
-// ?
-[  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionFound
-[  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionNotFound
-[  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.StartGoogleUpdateWithArgs_MachineVersionVersionDoesNotExist
 
 // Scheduled task is not running even when its been started
 [  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2
@@ -24,15 +19,13 @@ TEST FAILURES AFTER EXE NAME CHANGE (18)
 [  FAILED  ] NetworkRequestTest.RetriesNegativeTest
 [  FAILED  ] NetworkRequestTest.RetriesNegativeTestUrlmon
 
-// Signature or timestamp invalid - presumably something is wrong with the test cert
-// (0x80096005 The timestamp signature and/or certificate could not be verified or is malformed.)
-// Could be that we need to rebuild SaveArguments.exe in unittest_support so that the signature is less than 100 days old...
-[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_Machine
-[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_User
-[  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileCollision
-[  FAILED  ] GoogleUpdateRecoveryTest.VerifyFileSignature_SignedValid
+// We need another cert that is not trusted
+[  FAILED  ] GoogleUpdateRecoveryTest.VerifyFileSignature_UntrustedChain
 
 // SHGetFolderPath() fails with an ERROR_INVALID_DATA
+[  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionFound
+[  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.BuildGoogleUpdateExePath_MachineVersionNotFound
+[  FAILED  ] GoopdateUtilsRegistryProtectedWithMachineFolderPathsTest.StartGoogleUpdateWithArgs_MachineVersionVersionDoesNotExist
 [  FAILED  ] SetupGoogleUpdateMachineRegistryProtectedInHklmTest.InstallRegistryValues
 [  FAILED  ] SetupGoogleUpdateMachineTest.InstallAndUninstallMsiHelper
 [  FAILED  ] SetupGoogleUpdateMachineTest.InstallMsiHelper_OverinstallDifferentMsiBuild
