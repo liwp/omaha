@@ -120,7 +120,7 @@ def BuildMSI(version, namespace, exe_name, wxs_template, msi_base_name,
 
     wix_inputs += [google_update_wixobj]
     additional_dependencies += [metainstaller_path]
-      else:
+  else:
     output_dir = '$TESTS_DIR'
     wix_env['WIXCANDLEFLAGS'] += ['-dIsEnterprise=0']
 
