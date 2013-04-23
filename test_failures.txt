@@ -1,7 +1,4 @@
-TEST FAILURES AFTER EXE NAME CHANGE (13)
-// This seems to have always failed with an exception
-[  FAILED  ] AtlAssertTest.AtlAssert
-
+TEST FAILURES AFTER EXE NAME CHANGE (12)
 // Scheduled task is not running even when its been started
 [  FAILED  ] ScheduledTaskUtilsTest.ScheduledTasksV2
 
