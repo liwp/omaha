@@ -1,4 +1,4 @@
-TEST FAILURES AFTER EXE NAME CHANGE (20)
+TEST FAILURES AFTER EXE NAME CHANGE (18)
 // This seems to have always failed with an exception
 [  FAILED  ] AtlAssertTest.AtlAssert
 
@@ -31,10 +31,6 @@ TEST FAILURES AFTER EXE NAME CHANGE (20)
 [  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileReturned_User
 [  FAILED  ] GoogleUpdateRecoveryTest.FixGoogleUpdate_FileCollision
 [  FAILED  ] GoogleUpdateRecoveryTest.VerifyFileSignature_SignedValid
-
-// The version number in the URL is 0.0.0.0 rather than the expected 5.6.78.1
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_MachineApp
-[  FAILED  ] GoogleUpdateRecoveryRegistryProtectedTest.FixGoogleUpdate_AllValues_UserApp
 
 // SHGetFolderPath() fails with an ERROR_INVALID_DATA
 [  FAILED  ] SetupGoogleUpdateMachineRegistryProtectedInHklmTest.InstallRegistryValues

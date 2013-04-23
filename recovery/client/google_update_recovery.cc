@@ -44,9 +44,9 @@ const TCHAR* const kQueryStringFormat =
 // Information about where to obtain Omaha info.
 // This must never change in Omaha.
 const TCHAR* const kRegValueProductVersion  = _T("pv");
-const TCHAR* const kRelativeGoopdateRegPath = _T("Software\\Google\\Update\\");
+const TCHAR* const kRelativeGoopdateRegPath = _T("Software\\NinjaDeploy\\Update\\");
 const TCHAR* const kRelativeClientsGoopdateRegPath =
-    _T("Software\\Google\\Update\\Clients\\")
+    _T("Software\\NinjaDeploy\\Update\\Clients\\")
     _T("{5CB309C8-48AD-4C7A-8379-15696DF9D31D}");
 
 // The UpdateDev registry value to override the Code Red url.
@@ -421,7 +421,7 @@ HRESULT GetDownloadTargetPath(CString* download_target_path,
     download_target_path->Replace(_T(".tmp"), _T(".exe"));
   } else {
     // Try a static filename in the temp directory as a fallback.
-    *download_target_path = user_temp_dir + _T("GoogleUpdateSetup.exe");
+    *download_target_path = user_temp_dir + _T("NinjaDeployUpdateSetup.exe");
     *temp_file_path = _T("");
   }
 
@@ -444,7 +444,7 @@ HRESULT DownloadRepairFile(const CString& download_target_path,
 
   CString url;
   HRESULT hr = GetRegStringValue(true,
-                                 _T("SOFTWARE\\Google\\UpdateDev"),
+                                 _T("SOFTWARE\\NinjaDeploy\\UpdateDev"),
                                  kRegValueNameCodeRedUrl,
                                  &url);
   if (FAILED(hr)) {
