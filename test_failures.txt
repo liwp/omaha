@@ -1,4 +1,4 @@
-TEST FAILURES AFTER EXE NAME CHANGE (15)
+TEST FAILURES AFTER EXE NAME CHANGE (13)
 // This seems to have always failed with an exception
 [  FAILED  ] AtlAssertTest.AtlAssert
 
@@ -14,10 +14,6 @@ TEST FAILURES AFTER EXE NAME CHANGE (15)
 [  FAILED  ] InstallManagerInstallAppMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
 [  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerSucceeds
 [  FAILED  ] InstallerWrapperMachineTest.InstallApp_MsiInstallerWithArgumentSucceeds
-
-// We get a 404 - presumably because we're looking for NinjaDeployUpdate.exe?
-[  FAILED  ] NetworkRequestTest.RetriesNegativeTest
-[  FAILED  ] NetworkRequestTest.RetriesNegativeTestUrlmon
 
 // We need another cert that is not trusted
 [  FAILED  ] GoogleUpdateRecoveryTest.VerifyFileSignature_UntrustedChain

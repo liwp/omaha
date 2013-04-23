@@ -247,7 +247,10 @@ class NetworkRequestTest
     network_request_->set_time_between_retries(10);   // 10 miliseconds.
     std::vector<uint8> response;
 
-    CString url = _T("http://nohost/nofile");
+    // nohost gets expanded to nohost.lauripesonen.com on the dev VM, which
+    // then points to an nginx instance that responds with a 404 breaking the test.
+    // CString url = _T("http://nohost/nofile");
+    CString url = _T("http://fdgdfgdsfgsdfgd.net/nofile");
 
     // One request plus 2 retries after 10 and 20 miliseconds respectively.
     HRESULT hr = network_request_->Get(url, &response);
